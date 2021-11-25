@@ -8,9 +8,9 @@ class SlidableWidget<T> extends StatelessWidget {
   final Function(SlidableAction action) onDismissed;
 
   const SlidableWidget({
-    @required this.child,
-    @required this.onDismissed,
-    Key key,
+    required this.child,
+    required this.onDismissed,
+    required Key key,
   }) : super(key: key);
 
   @override
@@ -27,7 +27,7 @@ class SlidableWidget<T> extends StatelessWidget {
             onTap: () => onDismissed(SlidableAction.archive),
           ),
           IconSlideAction(
-            caption: 'Share',
+            caption: 'Invest',
             color: Colors.indigo,
             icon: Icons.share,
             onTap: () => onDismissed(SlidableAction.share),
@@ -38,7 +38,7 @@ class SlidableWidget<T> extends StatelessWidget {
         secondaryActions: <Widget>[
           IconSlideAction(
             caption: 'More',
-            color: Colors.black45,
+            color: Colors.pink,
             icon: Icons.more_horiz,
             onTap: () => onDismissed(SlidableAction.more),
           ),
