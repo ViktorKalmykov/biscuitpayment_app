@@ -1,4 +1,5 @@
 import 'package:biscuitpayment_app/provider/navigation_provider.dart';
+import 'package:biscuitpayment_app/screens/login_screen.dart';
 import 'package:biscuitpayment_app/src/screen/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,8 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: Home(),
+      home: LoginScreen(),
     ),
   );
 }
+
+
 

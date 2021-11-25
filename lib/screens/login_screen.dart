@@ -1,3 +1,4 @@
+import 'package:biscuitpayment_app/src/screen/home.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,7 +20,7 @@ class LoginScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
           title: DelayedDisplay(
             slidingBeginOffset: Offset(0, -1),
-            child: Text('Join Grow'),
+            child: Text('Join Biscuit'),
           ),
         ),
         body: Container(
@@ -52,25 +53,28 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: size.height * 0.03),
-                DelayedDisplay(
-                  slidingBeginOffset: Offset(0, -2),
-                  child: ButtonApp(
-                    iconImage: Text(''),
-                    size: size,
-                    borderColor: kbuttonLoginColor,
-                    color: kbuttonLoginColor,
-                    title: 'Login',
-                    titleColor: kTextWhiteColor,
-                  ),
-                ),
-                SizedBox(height: size.height * 0.025),
-                DelayedDisplay(
-                  slidingBeginOffset: Offset(0, -1),
-                  child: Text(
-                    'By continuing, you agree to Grow’s Terms of\nService and Privacy Policy',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(
-                        color: kTextWhiteColor, fontWeight: FontWeight.w300),
+              GestureDetector(
+                 onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Home()),);},
+                   child:Container(
+                         height: 24,
+                         alignment: Alignment.center,
+                         child: Text("Login",
+                             style: TextStyle(
+                                 fontSize: 13,
+                        // decoration: TextDecoration.underline,
+                                 color: Colors.white)),
+
+
+                         )),
+
+                      SizedBox(height: size.height * 0.025),
+                      DelayedDisplay(
+                      slidingBeginOffset: Offset(0, -1),
+                      child: Text(
+                      'By continuing, you agree to Biscuit’s Terms of\nService and Privacy Policy',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.poppins(
+                      color: kTextWhiteColor, fontWeight: FontWeight.w300)
                   ),
                 ),
                 SizedBox(height: size.height * 0.06),
@@ -79,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                 DelayedDisplay(
                   
                   slidingBeginOffset: Offset(0, 1),
-                  child: ButtonApp(
+                  child: RaisedButton(
                     size: size,
                     title: 'Sign in with Email',
                     color: Colors.transparent,
@@ -91,7 +95,7 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(height: size.height * 0.025),
                 DelayedDisplay(
                   slidingBeginOffset: Offset(0, 2),
-                  child: ButtonApp(
+                  child: RaisedButton(
                     size: size,
                     title: 'Sign in with Apple',
                     color: kbuttonSignAppleColor,
@@ -103,7 +107,7 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(height: size.height * 0.025),
                 DelayedDisplay(
                   slidingBeginOffset: Offset(0, 3),
-                  child: ButtonApp(
+                  child: RaisedButton(
                     size: size,
                     title: 'Sign in with Google',
                     color: kbuttonSignGoogleColor,
@@ -161,9 +165,9 @@ class OrWidgets extends StatelessWidget {
   }
 }
 
-class ButtonApp extends StatelessWidget {
-  const ButtonApp({
-    Key? key,
+class RaisedButton extends StatelessWidget {
+  const RaisedButton({
+    Key, key,
     required this.size,
     this.color,
     this.title,
