@@ -20,7 +20,17 @@ class CreditCard extends StatelessWidget {
         height: 180,
         width: 300,
         decoration: BoxDecoration(
-            color: Colors.pink,
+            gradient: LinearGradient(
+              colors: [
+                // use your preferred colors
+                Colors.pink,
+                Colors.orange,
+              ],
+              // start at the top
+              begin: Alignment.topCenter,
+              // end at the bottom
+              end: Alignment.bottomCenter,
+            ),
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(

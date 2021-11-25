@@ -6,7 +6,7 @@ class DeploymentPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Upload to cloud'),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.pink,
         ),
       );
 }

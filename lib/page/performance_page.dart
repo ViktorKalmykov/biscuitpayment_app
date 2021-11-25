@@ -7,7 +7,7 @@ class PerformancePage extends StatelessWidget {
         appBar: AppBar(
           title: Text('PERFORMANCE'),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.pink,
         ),
       );
 }

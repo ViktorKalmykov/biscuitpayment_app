@@ -6,7 +6,7 @@ class ResourcesPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Resources'),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.pink,
         ),
       );
 }

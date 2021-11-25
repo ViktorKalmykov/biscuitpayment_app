@@ -6,7 +6,7 @@ class GetStartedPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('MARKETPLACE'),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.pink,
         ),
       );
 }

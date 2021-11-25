@@ -37,6 +37,7 @@ dependencies:
   delayed_display: ^2.0.0
   google_fonts: ^2.1.0
   flutter_svg: ^0.22.0
+  flutter_slidable: ^0.5.7
 
   provider: ^5.0.0
 

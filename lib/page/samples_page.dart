@@ -6,7 +6,7 @@ class SamplesPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('MY GRADE'),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.pink,
         ),
       );
 }

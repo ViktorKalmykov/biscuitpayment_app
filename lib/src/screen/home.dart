@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.blue,
+      appBar: AppBar(backgroundColor: Colors.pink,
         title: Text("BISCUIT"),
         centerTitle: true,
       ),
@@ -35,7 +35,14 @@ class _HomeState extends State<Home> {
             Container(
               height: 300,
               decoration: BoxDecoration(
-                  color: Colors.blue,
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.pink,
+                      Colors.blue,
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
                   borderRadius: BorderRadius.only(bottomRight: Radius.circular(60),bottomLeft: Radius.circular(60),)
               ),
             ),
@@ -115,7 +122,7 @@ class _HomeState extends State<Home> {
                       ),
                     ],
                   ),
-                  
+
                   ListTile(
                     onTap: (){
                       _settingModalBottomSheet(context);

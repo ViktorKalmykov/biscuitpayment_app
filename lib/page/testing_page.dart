@@ -6,7 +6,7 @@ class TestingPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('BISCUIT BOT'),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.pink,
         ),
       );
 }
