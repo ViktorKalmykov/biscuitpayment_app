@@ -13,13 +13,13 @@ class GetStartedPage extends StatelessWidget {
   final String title = 'Marketplace';
 
 
-@override
-Widget build(BuildContext context) => MaterialApp(
-  debugShowCheckedModeBanner: false,
-  title: title,
-  theme: ThemeData(primarySwatch: Colors.pink),
-  home: MainPage(title: title),
-);
+  @override
+  Widget build(BuildContext context) => MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: title,
+    theme: ThemeData(primarySwatch: Colors.pink),
+    home: MainPage(title: title),
+  );
 }
 
 class MainPage extends StatefulWidget {
