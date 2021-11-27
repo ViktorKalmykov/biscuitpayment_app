@@ -10,7 +10,7 @@ import '../data.dart';
 import '../utils.dart';
 
 class GetStartedPage extends StatelessWidget {
-  final String title = 'Marketplace';
+  final String title = 'MARKETPLACE';
 
 
   @override
