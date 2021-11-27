@@ -3,6 +3,7 @@ import 'package:biscuitpayment_app/model/drawer_item.dart';
 import 'package:biscuitpayment_app/page/deployment_page.dart';
 import 'package:biscuitpayment_app/page/get_started_page.dart';
 import 'package:biscuitpayment_app/page/performance_page.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:biscuitpayment_app/src/widget/cards.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +12,9 @@ import '../common.dart';
 import 'package:biscuitpayment_app/page/resources_page.dart';
 import 'package:biscuitpayment_app/page/samples_page.dart';
 import 'package:biscuitpayment_app/page/testing_page.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:biscuitpayment_app/provider/navigation_provider.dart';
+
 
 class Home extends StatefulWidget {
   @override
@@ -20,6 +23,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   double money = 50.00;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +48,9 @@ class _HomeState extends State<Home> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(60),bottomLeft: Radius.circular(60),)
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(60),
+                    bottomLeft: Radius.circular(60),)
               ),
             ),
             SafeArea(
@@ -56,15 +63,27 @@ class _HomeState extends State<Home> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: RichText(text: TextSpan(
-                          children: [
-                            TextSpan(text: "\nTotal Balance\n", style: TextStyle(color: white.withOpacity(0.5), fontSize: 18)),
-                            TextSpan(text: "\$ ", style: TextStyle(color: white.withOpacity(0.5), fontSize: 30)),
-                            TextSpan(text: "1,234.00 \n", style: TextStyle(color: white, fontSize: 36)),
-                            TextSpan(text: " \nYour cards", style: TextStyle(color: white.withOpacity(0.5), fontSize: 18)),
-                          ]
+                            children: [
+                              TextSpan(text: "\nTotal Balance\n",
+                                  style: TextStyle(
+                                      color: white.withOpacity(0.5),
+                                      fontSize: 18)),
+                              TextSpan(text: "\$ ",
+                                  style: TextStyle(
+                                      color: white.withOpacity(0.5),
+                                      fontSize: 30)),
+                              TextSpan(text: "1,234.00 \n",
+                                  style: TextStyle(color: white, fontSize: 36)),
+                              TextSpan(text: " \nYour cards",
+                                  style: TextStyle(
+                                      color: white.withOpacity(0.5),
+                                      fontSize: 18)),
+                            ]
                         )),
                       ),
-                      IconButton(icon: Icon(Icons.more_vert, color: white,size: 40,), onPressed: (){})
+                      IconButton(
+                          icon: Icon(Icons.more_vert, color: white, size: 40,),
+                          onPressed: () {})
                     ],
                   ),
 
@@ -74,8 +93,14 @@ class _HomeState extends State<Home> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
-                        CreditCard(color: "2a1214", number: 9290, image: "mastercard.png", valid: "VALID 10/22",),
-                        CreditCard(color: "000068", number: 1298, image: "visa .png", valid: "VALID 07/24",),
+                        CreditCard(color: "2a1214",
+                          number: 9290,
+                          image: "mastercard.png",
+                          valid: "VALID 10/22",),
+                        CreditCard(color: "000068",
+                          number: 1298,
+                          image: "visa .png",
+                          valid: "VALID 07/24",),
                       ],
                     ),
                   ),
@@ -96,19 +121,23 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.all(2.0),
-                          child: CircleAvatar(child: Icon(Icons.add), radius: 25,),
+                          child: CircleAvatar(child: Icon(Icons.add),
+                            radius: 25,),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(2.0),
-                          child: CircleAvatar(backgroundImage: AssetImage("images/p2.jpg"),),
+                          child: CircleAvatar(backgroundImage: AssetImage(
+                              "images/p2.jpg"),),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(2.0),
-                          child: CircleAvatar(backgroundImage: AssetImage("images/p3.jpg"),),
+                          child: CircleAvatar(backgroundImage: AssetImage(
+                              "images/p3.jpg"),),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(2.0),
-                          child: CircleAvatar(backgroundImage: AssetImage('images/p1.jpg'),),
+                          child: CircleAvatar(backgroundImage: AssetImage(
+                              'images/p1.jpg'),),
                         ),
                       ],
                     ),
@@ -124,25 +153,30 @@ class _HomeState extends State<Home> {
                   ),
 
                   ListTile(
-                    onTap: (){
+                    onTap: () {
                       _settingModalBottomSheet(context);
                     },
-                    leading: const CircleAvatar(backgroundImage: AssetImage('images/p2.jpg'),),
+                    leading: const CircleAvatar(
+                      backgroundImage: AssetImage('images/p2.jpg'),),
                     title: RichText(text: TextSpan(children: [
                       TextSpan(text: 'Jason Martin\n'),
-                        TextSpan(text: 'Money Sent - Today 9AM\n', style: TextStyle(fontSize: 14, color: grey))
-                      ], style: TextStyle(color: Colors.black, fontSize: 18))),
+                      TextSpan(
+                          text: 'Money Sent - Today 9AM\n', style: TextStyle(
+                          fontSize: 14, color: grey))
+                    ], style: TextStyle(color: Colors.black, fontSize: 18))),
                     trailing: Text("- \$430", style: TextStyle(fontSize: 20),),
                   ),
 
                   ListTile(
-                    onTap: (){
+                    onTap: () {
                       _settingModalBottomSheet(context);
                     },
-                    leading: CircleAvatar(backgroundImage: AssetImage("images/p2.jpg"),),
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage("images/p2.jpg"),),
                     title: RichText(text: TextSpan(children: [
                       TextSpan(text: 'Jason Martin\n'),
-                      TextSpan(text: 'Money received - Today 12PM\n', style: TextStyle(fontSize: 14, color: grey))
+                      TextSpan(text: 'Money received - Today 12PM\n',
+                          style: TextStyle(fontSize: 14, color: grey))
                     ], style: TextStyle(color: Colors.black, fontSize: 18))),
                     trailing: Text("+ \$220", style: TextStyle(fontSize: 20),),
                   ),
@@ -155,30 +189,33 @@ class _HomeState extends State<Home> {
     );
   }
 
-  void _settingModalBottomSheet(context){
+  void _settingModalBottomSheet(context) {
     showModalBottomSheet(
         context: context,
-        builder: (BuildContext bc){
+        builder: (BuildContext bc) {
           return Container(
             decoration: BoxDecoration(
-              color: white,
-              borderRadius: BorderRadius.only(topRight: Radius.circular(20), topLeft: Radius.circular(20))
+                color: white,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20), topLeft: Radius.circular(20))
             ),
             child: new Wrap(
               children: <Widget>[
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center
-                  ,children: <Widget>[
+                  , children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: CircleAvatar(radius: 25,backgroundImage: AssetImage("images/p2.jpg"),),
+                    child: CircleAvatar(radius: 25,
+                      backgroundImage: AssetImage("images/p2.jpg"),),
                   ),
                 ],),
-            Container(
-              alignment: Alignment.center,
-              child: Text("Jason Martin", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold ),),
-            ),
+                Container(
+                  alignment: Alignment.center,
+                  child: Text("Jason Martin", style: TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),),
+                ),
                 Container(
                   alignment: Alignment.center,
                   child: Text("Amount to send"),
@@ -190,25 +227,32 @@ class _HomeState extends State<Home> {
                     Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: InkWell(
-                          onTap: (){
-                            if(money != 0){
+                          onTap: () {
+                            if (money != 0) {
                               money -= 10;
                             }
                           },
-                          child: CircleAvatar(child: Icon(Icons.remove, color: Colors.white,), radius: 20, backgroundColor: Colors.grey,)),
+                          child: CircleAvatar(
+                            child: Icon(Icons.remove, color: Colors.white,),
+                            radius: 20,
+                            backgroundColor: Colors.grey,)),
                     ),
                     SizedBox(width: 10,),
-                    Text("$money", style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold ),),
+                    Text("$money", style: TextStyle(
+                        fontSize: 38, fontWeight: FontWeight.bold),),
                     SizedBox(width: 10,),
                     Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: InkWell(
-                        onTap: (){
-                          setState(() {
-                            money += 10;
-                          });
-                        },
-                          child: CircleAvatar(child: Icon(Icons.add, color: Colors.white,), radius: 20, backgroundColor: Colors.grey,)),
+                          onTap: () {
+                            setState(() {
+                              money += 10;
+                            });
+                          },
+                          child: CircleAvatar(
+                            child: Icon(Icons.add, color: Colors.white,),
+                            radius: 20,
+                            backgroundColor: Colors.grey,)),
                     ),
 
                   ],
@@ -217,7 +261,7 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: const EdgeInsets.all(16),
                   child: InkWell(
-                    onTap: (){
+                    onTap: () {
                       Navigator.pop(context);
                     },
                     child: Container(
@@ -229,7 +273,8 @@ class _HomeState extends State<Home> {
                       child: Center(
                         child: Padding(
                           padding: const EdgeInsets.all(12),
-                          child: Text("Send Money", style: TextStyle(fontSize: 22, color: Colors.white),),
+                          child: Text("Send Money", style: TextStyle(
+                              fontSize: 22, color: Colors.white),),
                         ),
                       ),
                     ),
@@ -242,7 +287,6 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
 
 
 

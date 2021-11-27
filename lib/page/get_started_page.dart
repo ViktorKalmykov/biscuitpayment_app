@@ -1,5 +1,6 @@
 import 'package:biscuitpayment_app/model/chat.dart';
 import 'package:biscuitpayment_app/src/widget/slidable_widget.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:biscuitpayment_app/data.dart';
@@ -10,15 +11,15 @@ import '../data.dart';
 import '../utils.dart';
 
 class GetStartedPage extends StatelessWidget {
-  final String title = 'MARKETPLACE';
+
 
 
   @override
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: title,
+
     theme: ThemeData(primarySwatch: Colors.pink),
-    home: MainPage(title: title),
+    home: MainPage(title: "title"),
   );
 }
 
@@ -39,7 +40,11 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
-      title: Text(widget.title),
+      title: Text(
+        "MARKETPLACE",
+      ),
+      backgroundColor: Colors.pink,
+      centerTitle: true,
     ),
     body: ListView.separated(
       itemCount: items.length,
@@ -53,6 +58,21 @@ class _MainPageState extends State<MainPage> {
           onDismissed: (action) =>
               dismissSlidableItem(context, index, action),
         );
+      },
+    ),
+    bottomNavigationBar: CurvedNavigationBar(
+      color: Colors.pink,
+      backgroundColor: Colors.white,
+      buttonBackgroundColor: Colors.pink,
+      items: <Widget>[
+        Icon(Icons.add, size: 30, color: Colors.white),
+        Icon(Icons.list, size: 30, color: Colors.white),
+        Icon(Icons.compare_arrows, size: 30, color: Colors.white),
+        Icon(Icons.call_split, size: 30, color: Colors.white),
+        Icon(Icons.perm_identity, size: 30, color: Colors.white),
+      ],
+      onTap: (index){
+        debugPrint("Current Index is $index");
       },
     ),
   );

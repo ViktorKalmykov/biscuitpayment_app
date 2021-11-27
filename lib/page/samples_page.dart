@@ -23,6 +23,7 @@ Widget build(BuildContext context) {
       backgroundColor: Colors.pink,
       centerTitle: true,
     ),
+
     backgroundColor: AppColor.pripmaryColor,
     body: Padding(
       padding: const EdgeInsets.symmetric(
@@ -35,7 +36,7 @@ Widget build(BuildContext context) {
           children: [
             const Center(
               child: Text(
-                "Quizz App",
+                "Biscuit Grade",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 48,
@@ -60,7 +61,7 @@ Widget build(BuildContext context) {
                     padding:
                     EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                     child: Text(
-                      "Start the Quizz",
+                      "Let's Start",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 26.0,
@@ -73,7 +74,7 @@ Widget build(BuildContext context) {
             ),
             const Center(
               child: Text(
-                "Made with ❤ by Mouheb Boucherb",
+                "Watch, how we evaluate Your Grade",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
