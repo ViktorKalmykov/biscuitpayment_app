@@ -14,6 +14,9 @@ import 'package:biscuitpayment_app/page/samples_page.dart';
 import 'package:biscuitpayment_app/page/testing_page.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:biscuitpayment_app/provider/navigation_provider.dart';
+import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 
 class Home extends StatefulWidget {
@@ -23,7 +26,13 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   double money = 50.00;
+  int currentIndex = 0;
 
+  void changePage(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -186,6 +195,65 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
+      bottomNavigationBar: BubbleBottomBar(
+        opacity: 0,
+        currentIndex: currentIndex,
+        onTap: changePage,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+        elevation: 8,
+        items: <BubbleBottomBarItem>[
+          BubbleBottomBarItem(
+              backgroundColor: Colors.black,
+              icon: Icon(
+                Icons.add,
+                  size: 30, color: Colors.black,
+              ),
+              activeIcon: Icon(
+                Icons.add,
+                size: 30, color: Colors.black,
+              ),
+              title: Text("Home")),
+          BubbleBottomBarItem(
+              backgroundColor: Colors.black,
+              icon: Icon(
+                Icons.attach_money,
+                size: 30, color: Colors.black,
+              ),
+              activeIcon: Icon(
+                Icons.attach_money,
+                size: 30, color: Colors.black,
+              ),
+              title: Text("Invest")),
+          BubbleBottomBarItem(
+              backgroundColor: Colors.black,
+              icon: Icon(
+                Icons.group_add_rounded,
+                size: 30, color: Colors.black,
+              ),
+              activeIcon: Icon(
+                Icons.group_add_rounded,
+                size: 30, color: Colors.black,
+              ),
+              title: Text("Fundraise")),
+          BubbleBottomBarItem(
+              backgroundColor: Colors.black,
+              icon: Container(
+                height: 24,
+                width: 24,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(image: AssetImage('robot.png')),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color(0x5c000000),
+                        offset: Offset(0, 1),
+                        blurRadius: 5)
+                  ],
+                ),
+              ),
+              title: Text("Profile")),
+        ],
+      ),
     );
   }
 
@@ -287,6 +355,7 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
 
 
 
