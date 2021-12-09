@@ -62,6 +62,28 @@ class _HomeState extends State<Cards> {
                     ],
                   ),
 
+                  SizedBox(height: 20,),
+                  Text("Courses by Peter", style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 17,
+                      fontFamily: 'product'
+                  ),),
+                  SizedBox(height: 10,),
+                  Container(
+                    height: 100,
+                    width: MediaQuery.of(context).size.width,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          courseWidget("icon1", "Young \nLearners", "GRADE 0-1", Color(0xffdbf0f1), Color(0xff39888e)),
+                          courseWidget("icon2", "Creative \nBloomers", "GRADE 0-2", Color(0xffffe9a7), Color(0xff4d4d4d)),
+                          courseWidget("icon3", "Early \nAchievers", "GRADE 0-3", Color(0xfff1e7f5), Color(0xff4a155f))
+                        ],
+                      ),
+                    ),
+                  ),
+
                   SizedBox(height: 5,),
                   Container(
                     height: 200,
@@ -233,6 +255,49 @@ class _HomeState extends State<Cards> {
             ),
           );
         }
+    );
+  }
+  Container courseWidget(String img, String name, String grade, Color color, Color textColor)
+  {
+    return Container(
+      height: 100,
+      margin: EdgeInsets.only(right: 10),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          color: color
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(name, style: TextStyle(
+                    color: textColor,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500
+                ),),
+                Text(grade, style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 11
+                ),)
+              ],
+            ),
+          ),
+          Container(
+            height: 90,
+            width: 70,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('asset/images/$img.png'),
+                    fit: BoxFit.contain
+                )
+            ),
+          )
+        ],
+      ),
     );
   }
 }
