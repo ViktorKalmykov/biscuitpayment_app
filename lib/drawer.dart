@@ -1,3 +1,4 @@
+import 'package:biscuitpayment_app/Pages/on_boarding.dart';
 import "package:biscuitpayment_app/data/drawer_items.dart";
 import 'package:biscuitpayment_app/model/drawer_item.dart';
 import 'package:biscuitpayment_app/page/deployment_page.dart';
@@ -86,7 +87,7 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     switch (index) {
       case 0:
-        navigateTo(GetStartedPage());
+        navigateTo(OnBoarding());
         break;
       case 1:
         navigateTo(SamplesPage());

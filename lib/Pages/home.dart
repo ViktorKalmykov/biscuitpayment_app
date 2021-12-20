@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:biscuitpayment_app/config.dart';
 import 'package:biscuitpayment_app/models/actor.dart';
@@ -26,7 +28,7 @@ class Home extends StatelessWidget {
     ];
     final orders = [
       Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
-      Order(asset: Config.assets.doll, title: "Deer NFT", qte: 2),
+      Order(asset: Config.assets.doll, title: "Doll", qte: 2),
     ];
 
     return Scaffold(

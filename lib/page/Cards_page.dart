@@ -1,3 +1,4 @@
+import 'package:biscuitpayment_app/config.dart';
 import 'package:biscuitpayment_app/data/drawer_items.dart';
 import 'package:biscuitpayment_app/model/drawer_item.dart';
 import 'package:biscuitpayment_app/page/deployment_page.dart';
@@ -13,6 +14,8 @@ import 'package:biscuitpayment_app/page/resources_page.dart';
 import 'package:biscuitpayment_app/page/samples_page.dart';
 import 'package:biscuitpayment_app/page/testing_page.dart';
 import 'package:biscuitpayment_app/provider/navigation_provider.dart';
+import 'package:biscuitpayment_app/config.dart';
+
 
 class Cards extends StatefulWidget {
   @override
@@ -76,9 +79,9 @@ class _HomeState extends State<Cards> {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                          courseWidget("icon1", "Young \nLearners", "GRADE 0-1", Color(0xffdbf0f1), Color(0xff39888e)),
-                          courseWidget("icon2", "Creative \nBloomers", "GRADE 0-2", Color(0xffffe9a7), Color(0xff4d4d4d)),
-                          courseWidget("icon3", "Early \nAchievers", "GRADE 0-3", Color(0xfff1e7f5), Color(0xff4a155f))
+                          courseWidget(Config.assets.kid1, "Young \nLearners", "GRADE 0-1", Color(0xffdbf0f1), Color(0xff39888e)),
+                          courseWidget(Config.assets.kid2, "Creative \nBloomers", "GRADE 0-2", Color(0xffffe9a7), Color(0xff4d4d4d)),
+                          courseWidget(Config.assets.kid3, "Early \nAchievers", "GRADE 0-3", Color(0xfff1e7f5), Color(0xff4a155f))
                         ],
                       ),
                     ),
