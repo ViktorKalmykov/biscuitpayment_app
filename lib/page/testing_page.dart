@@ -24,7 +24,7 @@ class _MyAppState extends State<TestingPage> {
     AIResponse aiResponse = await dialogflow.detectIntent(query);
     setState(() {
       messsages.insert(0, {
-        "data": 0,
+        "search": 0,
         "message": aiResponse.getListMessage()[0]["text"]["text"][0].toString()
       });
     });
@@ -52,7 +52,7 @@ class _MyAppState extends State<TestingPage> {
                     itemCount: messsages.length,
                     itemBuilder: (context, index) => chat(
                         messsages[index]["message"].toString(),
-                        messsages[index]["data"]))),
+                        messsages[index]["search"]))),
             Divider(
               height: 5.0,
               color: Colors.pink,
@@ -86,7 +86,7 @@ class _MyAppState extends State<TestingPage> {
                           } else {
                             setState(() {
                               messsages.insert(0,
-                                  {"data": 1, "message": messageInsert.text});
+                                  {"search": 1, "message": messageInsert.text});
                             });
                             response(messageInsert.text);
                             messageInsert.clear();

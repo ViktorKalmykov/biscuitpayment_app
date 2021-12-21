@@ -1,18 +1,16 @@
-import 'package:flutter/foundation.dart';
 import 'package:equatable/equatable.dart';
-import 'package:filter_list/filter_list.dart';
 
-class Price extends Equatable{
+class Price extends Equatable {
   final int id;
   final String price;
 
-  Price({
+  const Price({
     required this.id,
     required this.price,
   });
 
   @override
-  List<Object?> get props => [id price];
+  List<Object?> get props => [price];
 
   static List<Price> prices = [
     Price(id: 1, price: '\$'),

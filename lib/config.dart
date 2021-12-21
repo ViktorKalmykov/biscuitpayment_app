@@ -2,13 +2,23 @@
 
 import 'dart:js';
 
-import 'package:biscuitpayment_app/page/filter_screen.dart';
+
+
+import 'package:biscuitpayment_app/screens/dashboard/components/header.dart';
 import 'package:biscuitpayment_app/widgets/textField.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_dialogflow/flutter_dialogflow.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:biscuitpayment_app/widgets/textField.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+mixin MyStore {
+}
+
+
 
 class Config {
   static final assets = _Asset();
@@ -49,20 +59,14 @@ class Config {
                 width: 10,
               ),
               Expanded(
-                  child: SGTextfield(
-                    suffix: FeatherIcons.search,
-                    hintText: 'search',
+                  child: CupertinoSearchTextField(
+                    onChanged: (value) {CustomSearchDelegate();},
                   )),
               SizedBox(
                 width: 5,
               ),
               IconButton(
-                  onPressed: () {
-                    Config.navigate(
-                        context,
-                        FilterScreen(
-                        ));
-                  },
+                  onPressed: () {},
                   icon: Icon(
                     Icons.menu,
                     size: 30,
@@ -74,6 +78,97 @@ class Config {
     preferredSize: Size(width, 100),
   );
 }
+
+class CustomSearchDelegate extends SearchDelegate {
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: Icon(Icons.clear),
+        onPressed: () {
+          query = '';
+        },
+      ),
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    if (query.length < 3) {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Center(
+            child: Text(
+              "Search term must be longer than two letters.",
+            ),
+          )
+        ],
+      );
+    }
+
+    //Add the search term to the searchBloc.
+    //The Bloc will then handle the searching and add the results to the searchResults stream.
+    //This is the equivalent of submitting the search term to whatever search service you are using
+
+
+    return Column(
+      children: <Widget>[
+        //Build the results based on the searchResults stream in the searchBloc
+        StreamBuilder(
+
+          builder: (context, AsyncSnapshot<List<Result>> snapshot) {
+            if (!snapshot.hasData) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Center(child: CircularProgressIndicator()),
+                ],
+              );
+            } else if (snapshot.data!.length == 0) {
+              return Column(
+                children: <Widget>[
+                  Text(
+                    "No Results Found.",
+                  ),
+                ],
+              );
+            } else {
+              var results = snapshot.data;
+              return ListView.builder(
+                itemBuilder: (context, index) {
+                  var result = results![index];
+                  return ListTile(
+                  );
+                },
+              );
+            }
+          },
+        ),
+      ],
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    // This method is called everytime the search term changes.
+    // If you want to add search suggestions as the user enters their search term, this is the place to do that.
+    return Column();
+  }
+}
+
+
 
 class _Asset {
   final bg = "assets/images/Background.png";
@@ -101,3 +196,4 @@ class _Color {
   final menuColor = Color(0xFF222020);
   final starColor = Color(0xFFF59C4C);
 }
+
