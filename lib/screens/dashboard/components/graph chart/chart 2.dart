@@ -13,7 +13,7 @@ class HigherChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 250,
       child: Stack(
         children: [HigherBarChartWidget()
         ],

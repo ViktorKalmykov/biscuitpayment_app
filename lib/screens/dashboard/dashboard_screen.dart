@@ -1,5 +1,7 @@
 import 'package:biscuitpayment_app/responsive.dart';
+import 'package:biscuitpayment_app/screens/dashboard/components/graph%20chart/Storage_chart2.dart';
 import 'package:biscuitpayment_app/screens/dashboard/components/graph%20chart/chart%202.dart';
+import 'package:biscuitpayment_app/screens/dashboard/components/graph%20chart/my_files%202.dart';
 import 'package:biscuitpayment_app/screens/dashboard/components/my_fields.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +35,8 @@ class DashboardScreen extends StatelessWidget {
                   flex: 5,
                   child: Column(
                     children: [
-                      HigherChart(),
+                      MyFiles2(),
+                      StarageDetails2(),
                       MyFiles(),
                       SizedBox(height: defaultPadding),
                       RecentFiles(),
