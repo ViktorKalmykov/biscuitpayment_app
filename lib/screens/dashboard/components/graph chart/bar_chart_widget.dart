@@ -5,7 +5,7 @@ import 'bar_data.dart';
 import 'bar_titles.dart';
 
 
-class BarChartWidget extends StatelessWidget {
+class HigherBarChartWidget extends StatelessWidget {
   final double barWidth = 22;
 
   @override
