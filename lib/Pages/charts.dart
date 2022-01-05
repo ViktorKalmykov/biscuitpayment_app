@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import '../constant.dart';
 
-class Chart extends StatelessWidget {
+class FinalGraph extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(

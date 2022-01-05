@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import '../../../../constants.dart';
 import '../chart.dart';
 
-class HigherChart extends StatelessWidget {
-  const HigherChart({
+class FinalGraph extends StatelessWidget {
+  const FinalGraph({
     Key? key,
   }) : super(key: key);
 
@@ -15,7 +15,7 @@ class HigherChart extends StatelessWidget {
     return SizedBox(
       height: 250,
       child: Stack(
-        children: [HigherBarChartWidget()
+        children: [FinalGraph()
         ],
       ),
     );

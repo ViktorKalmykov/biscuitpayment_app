@@ -2,15 +2,16 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 
-class LineCharts extends StatelessWidget {
+class HPLineCharts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const cutOffYValue = 0.0;
     const yearTextStyle =
-    TextStyle(fontSize: 8, color: Colors.white);
+    TextStyle(fontSize: 12, color: Colors.white);
 
     return SizedBox(
       height: 200,
+      width: 400,
       child: LineChart(
         LineChartData(
           lineTouchData: LineTouchData(enabled: false),
@@ -27,7 +28,7 @@ class LineCharts extends StatelessWidget {
               isCurved: true,
               barWidth: 1,
               colors: [
-                Colors.blue,
+                Colors.pink,
               ],
               belowBarData: BarAreaData(
                 show: true,
