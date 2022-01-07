@@ -13,7 +13,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_dialogflow/flutter_dialogflow.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:biscuitpayment_app/widgets/textField.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 mixin MyStore {
 }
