@@ -5,31 +5,27 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../constants.dart';
 
-class RecentFiles extends StatelessWidget {
-  const RecentFiles({
+class Trending extends StatelessWidget {
+  const Trending({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       padding: EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        color: secondaryColor,
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        color: Colors.white,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Recent Assets",
-            style: Theme.of(context).textTheme.subtitle1,
-          ),
           SizedBox(
             width: double.infinity,
             child: DataTable2(
               columnSpacing: defaultPadding,
-              minWidth: 600,
+              minWidth: 90,
               columns: [
                 DataColumn(
                   label: Text("Ticker"),
@@ -43,7 +39,7 @@ class RecentFiles extends StatelessWidget {
               ],
               rows: List.generate(
                 demoRecentFiles.length,
-                (index) => recentFileDataRow(demoRecentFiles[index]),
+                    (index) => recentFileDataRow(demoRecentFiles[index]),
               ),
             ),
           ),
@@ -54,6 +50,31 @@ class RecentFiles extends StatelessWidget {
 }
 
 DataRow recentFileDataRow(RecentFile fileInfo) {
+  return DataRow(
+    cells: [
+      DataCell(
+        Row(
+          children: [
+            SvgPicture.asset(
+              fileInfo.icon!,
+              height: 30,
+              width: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+              child: Text(fileInfo.title!),
+            ),
+          ],
+        ),
+      ),
+      DataCell(Text(fileInfo.date!)),
+      DataCell(Text(fileInfo.size!)),
+    ],
+  );
+}
+
+
+DataRow trendingDataRow(RecentFile fileInfo) {
   return DataRow(
     cells: [
       DataCell(

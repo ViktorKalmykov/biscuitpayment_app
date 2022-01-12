@@ -184,6 +184,12 @@ class _Asset {
   final kid1 = "assets/images/icon1.png";
   final kid2 = "assets/images/icon2.png";
   final kid3 = "assets/images/icon3.png";
+  final gdup = "assets/8888.png";
+  final kidkid = "assets/666.png";
+  final kidkidd = "assets/9999.png";
+  final tree = "assets/Tree.png";
+  final city = "assets/city.png";
+  final forrest = "assets/8787.png";
 }
 
 class _Color {

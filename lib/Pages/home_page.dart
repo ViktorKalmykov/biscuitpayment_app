@@ -15,6 +15,11 @@ import 'package:biscuitpayment_app/widgets/bottom_navigation_bar.dart';
 import 'package:biscuitpayment_app/widgets/order_component.dart';
 import 'package:biscuitpayment_app/widgets/textField.dart';
 
+import '../drawer.dart';
+import 'favorite.dart';
+
+
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -29,7 +34,11 @@ class _HomePageState extends State<HomePage> {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: Config.appBar(width),
+      appBar: AppBar(backgroundColor: Colors.pink,
+        title: Text("MARKETPLACE"),
+        centerTitle: true,
+      ),
+      drawer: NavigationDrawerWidget(),
       body: page == 0
           ? Home()
           : page == 1

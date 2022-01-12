@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:bezier_chart/bezier_chart.dart';
 import 'package:biscuitpayment_app/Pages/charts.dart';
 import 'package:biscuitpayment_app/Pages/widgets/Asset%20stats.dart';
@@ -10,6 +11,7 @@ import 'package:biscuitpayment_app/Pages/widgets/data%20bars.dart';
 import 'package:biscuitpayment_app/Pages/widgets/graph.dart';
 import 'package:biscuitpayment_app/screens/dashboard/components/graph%20chart/new%20chart.dart';
 import 'package:biscuitpayment_app/Pages/Chart%20for%20home%20page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:biscuitpayment_app/config.dart';
 import 'package:biscuitpayment_app/models/actor.dart';
@@ -84,6 +86,22 @@ List<BezierLine> lines = [
       ],
       lineColor: Color(0xff70FFE7),
       lineStrokeWidth: 2),
+];
+
+
+class Match {
+  final bool isSelected;
+  final String text;
+
+  Match({required this.isSelected, required this.text});
+}
+
+List matches = [
+  Match(isSelected: true, text: "NFT"),
+  Match(isSelected: false, text: "Crypto"),
+  Match(isSelected: false, text: "Avatars"),
+  Match(isSelected: false, text: "Rights of use"),
+  Match(isSelected: false, text: "Other"),
 ];
 
 
@@ -177,6 +195,7 @@ class MyFiles3 extends StatelessWidget {
   }
 }
 
+
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -223,7 +242,12 @@ class Home extends StatelessWidget {
       Text("Crypto"),
       Text("Other assets"),
     ];
-
+    final hot = [
+      Order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
+      Order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
+      Order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
+      Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+    ];
 
     return Scaffold(
       body: Container(
@@ -249,45 +273,43 @@ class Home extends StatelessWidget {
               child: ListView(
                 children: <Widget>[
 
-                  SizedBox(height: 20,),
+                  SizedBox(height: 10),
                   Container(
-                    margin: EdgeInsets.only(left: 8.0),
-                    height: 25,
-                    width: MediaQuery.of(context).size.width,
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          courseWidget("NFT", Color(0xfff1e7f5), Color(0xff4a155f)),
-                          courseWidget("Crypto", Color(0xffffe9a7), Color(0xff4d4d4d)),
-                          courseWidget("Avatars", Color(0xfff1e7f5), Color(0xff4a155f)),
-                          courseWidget("Rights of use", Color(0xfff1e7f5), Color(0xff4a155f))
-                        ],
-                      ),
-                    ),
+                    margin: EdgeInsets.symmetric(vertical: 20),
+                    height: 35,
+                    width: 20,
+                    child: ListView.builder(
+                        itemCount: matches.length,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (ctx, i) {
+                          return Container(
+                            alignment: Alignment.center,
+                            margin: EdgeInsets.symmetric(horizontal: 10),
+                            padding:
+                            EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: AutoSizeText(
+                              matches[i].text,
+                              style: TextStyle(color: Colors.pink),
+                            ),
+                          );
+                        }),
                   ),
-                  SizedBox(height: 14),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
-                    child: Text(
-                      'Market dynamics',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
+                  SizedBox(height: 0),
 
-                  SizedBox(height: 14),
+
+                  SizedBox(height: 5),
                   Price(percentChange: 11),
-                  Container(height: 150,
+                  Container(height: 170,
                     width: double.infinity,
                     margin: EdgeInsets.symmetric(horizontal: 15),
                     child: AssetPriceChart(lineColor: Colors.pink,),
                   ),
                   ChartFilter(),
-                  SizedBox(height: 24),
+                  SizedBox(height: 30),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
                     child: Text(
@@ -304,7 +326,7 @@ class Home extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       padding: EdgeInsets.symmetric(vertical: 10),
                       itemBuilder: (context, i) {
-                        final order = orders[i];
+                        final order = hot[i];
                         return Container(
                           margin: EdgeInsets.only(
                               left: i == 0 ? 20 : 0,
@@ -346,7 +368,8 @@ class Home extends StatelessWidget {
                           child: Row(
                             children: <Widget>[
                               Expanded(
-                                child: SvgPicture.asset("C:\Users\User\StudioProjects\biscuitpayment_app\lib\Pages\images\NFT-1.jpg"),
+                                child: Image.asset('assets/999.png',
+                                    width:30,height:180),
                               ),
                               Expanded(
                                 child: RichText(
@@ -358,7 +381,7 @@ class Home extends StatelessWidget {
                                         style: TextStyle(fontSize: 16),
                                       ),
                                       TextSpan(
-                                        text: "30% \n",
+                                        text: "15% \n",
                                         style: TextStyle(
                                           fontSize: 43,
                                           fontWeight: FontWeight.bold,
@@ -366,7 +389,7 @@ class Home extends StatelessWidget {
                                       ),
                                       TextSpan(
                                         text:
-                                        "at MacDonald's on your first order & Instant cashback",
+                                        "on our subscription solutions and any partner offerings",
                                         style: TextStyle(fontSize: 10),
                                       ),
                                     ],
@@ -516,7 +539,9 @@ class Home extends StatelessWidget {
                           child: Row(
                             children: <Widget>[
                               Expanded(
-                                child: SvgPicture.asset("C:\Users\User\StudioProjects\biscuitpayment_app\lib\Pages\images\NFT-1.jpg"),
+                                child: Image.asset('assets/8898.png',
+                                    width:300,height:166,
+                                    fit: BoxFit.cover),
                               ),
                               Expanded(
                                 child: RichText(
@@ -536,7 +561,7 @@ class Home extends StatelessWidget {
                                       ),
                                       TextSpan(
                                         text:
-                                        "at MacDonald's on your first order & Instant cashback",
+                                        "on special offering of ZTE NFT",
                                         style: TextStyle(fontSize: 10),
                                       ),
                                     ],

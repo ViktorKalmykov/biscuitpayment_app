@@ -60,6 +60,7 @@ dependencies:
   after_layout: ^1.0.7+2
   clay_containers: ^0.2.2
   bezier_chart: ^1.0.16
+  auto_size_text: ^2.1.0
 
 
   provider: ^5.0.0
@@ -104,6 +105,16 @@ flutter:
     - images/mastercard.png
     - images/visa .png
     - assets/images/
+    - assets/778.png
+    - assets/8898.png
+    - assets/999.png
+    - assets/666.png
+    - assets/777.png
+    - assets/888.png
+    - assets/9999.png
+    - assets/8888.png
+    - assets/Tree.png
+    - assets/city.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

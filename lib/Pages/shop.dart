@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:biscuitpayment_app/config.dart';
 
-class Shop extends StatelessWidget {
-  const Shop({Key? key}) : super(key: key);
+class Favorite extends StatelessWidget {
+  const Favorite({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

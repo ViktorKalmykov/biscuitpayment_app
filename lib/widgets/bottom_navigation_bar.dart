@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:biscuitpayment_app/config.dart';
+
+
+import '../config.dart';
 
 class SGBottomNavigationBar extends StatefulWidget {
   const SGBottomNavigationBar({Key? key, required this.items, this.onSelected})
@@ -30,49 +32,49 @@ class _SGBottomNavigationBarState extends State<SGBottomNavigationBar> {
         int index = widget.items.indexOf(e);
         return Expanded(
             child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            InkWell(
-              borderRadius: BorderRadius.circular(20),
-              onTap: () {
-                visibles = List.generate(widget.items.length, (index) => false);
-                visibles[index] = true;
-                setState(() {});
-                if (widget.onSelected != null) widget.onSelected!(index);
-              },
-              child: Container(
-                padding: EdgeInsets.all(10),
-                decoration: !visibles[index]
-                    ? null
-                    : BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
-                            colors: [
-                              Config.colors.pinkAccent,
-                              Config.colors.pink
-                            ],
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter),
-                      ),
-                child: e.copyWith(activate: visibles[index]),
-              ),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Container(
-              height: 12,
-              width: 22,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(50),
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                InkWell(
+                  borderRadius: BorderRadius.circular(20),
+                  onTap: () {
+                    visibles = List.generate(widget.items.length, (index) => false);
+                    visibles[index] = true;
+                    setState(() {});
+                    if (widget.onSelected != null) widget.onSelected!(index);
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: !visibles[index]
+                        ? null
+                        : BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: LinearGradient(
+                          colors: [
+                            Config.colors.pinkAccent,
+                            Config.colors.pink
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter),
+                    ),
+                    child: e.copyWith(activate: visibles[index]),
                   ),
-                  color: visibles[index]
-                      ? Config.colors.pink
-                      : Colors.transparent),
-            )
-          ],
-        ));
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Container(
+                  height: 12,
+                  width: 22,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(50),
+                      ),
+                      color: visibles[index]
+                          ? Config.colors.pink
+                          : Colors.transparent),
+                )
+              ],
+            ));
       }).toList(),
     );
   }
