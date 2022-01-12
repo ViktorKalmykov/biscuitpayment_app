@@ -7,6 +7,7 @@ import 'package:biscuitpayment_app/config.dart';
 import 'package:biscuitpayment_app/models/actor.dart';
 import 'package:biscuitpayment_app/widgets/button.dart';
 
+import '../home.dart';
 import 'NFT.dart';
 
 class NFTComponent extends StatelessWidget {
@@ -97,6 +98,7 @@ class NFTComponent extends StatelessWidget {
             right: 0,
             bottom: 0,
           ),
+
           Align(
             alignment: Alignment.topCenter,
             child: Hero(
@@ -113,5 +115,7 @@ class NFTComponent extends StatelessWidget {
         ],
       ),
     );
+
   }
 }
+

@@ -100,7 +100,7 @@ class Match {
   Match({required this.isSelected, required this.text});
 }
 
-List matches = [
+List matches1 = [
   Match(isSelected: true, text: "NFT"),
   Match(isSelected: false, text: "Crypto"),
   Match(isSelected: false, text: "Avatars"),
@@ -281,7 +281,7 @@ class Shop extends StatelessWidget {
                     height: 35,
                     width: 20,
                     child: ListView.builder(
-                        itemCount: matches.length,
+                        itemCount: matches1.length,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (ctx, i) {
                           return Container(
@@ -294,7 +294,7 @@ class Shop extends StatelessWidget {
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: AutoSizeText(
-                              matches[i].text,
+                              matches1[i].text,
                               style: TextStyle(color: Colors.pink),
                             ),
                           );
@@ -473,13 +473,13 @@ class Shop extends StatelessWidget {
                           margin: EdgeInsets.only(
                               left: i == 0 ? 20 : 0,
                               right: i == actors.length - 1 ? 20 : 8),
-                          child: NFTComponent(
-                            NFT: actor,
+                          child: ActorComponent(
+                            actor: actor,
                             onPressed: () {
                               Config.navigate(
                                   context,
-                                  DetailNFT(
-                                    NFT: actor,
+                                  DtailActor(
+                                    actor: actor,
                                   ));
                             },
                           ),

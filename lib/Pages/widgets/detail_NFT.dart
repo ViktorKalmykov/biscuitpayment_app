@@ -2,6 +2,8 @@
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biscuitpayment_app/Pages/widgets/NFT.dart';
+import 'package:biscuitpayment_app/models/order.dart';
+import 'package:biscuitpayment_app/widgets/order_component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -12,6 +14,7 @@ import 'package:biscuitpayment_app/widgets/button.dart';
 import 'package:biscuitpayment_app/widgets/qte_widget.dart';
 
 import '../favorite.dart';
+import '../home.dart';
 import 'NFT.dart';
 import 'NFT.dart';
 import 'NFT.dart';
@@ -19,15 +22,53 @@ import 'Price header.dart';
 import 'coin chart.dart';
 import 'data bars.dart';
 
-class DetailNFT extends StatelessWidget {
-  const DetailNFT({Key? key, required this.NFT}) : super(key: key);
-  final Actor NFT;
+final actors = [
+  Actor(
+      asset: Config.assets.forrest,
+      title: "CryptoMoon",
+      price: 75.7,
+      rating: 4),
+  Actor(
+      asset: Config.assets.forrest,
+      title: "Cryptoniya city",
+      price: 60,
+      rating: 3),
+  Actor(
+      asset: Config.assets.forrest,
+      title: "Front man toy",
+      price: 60,
+      rating: 3),
+  Actor(
+      asset: Config.assets.forrest,
+      title: "Front man toy",
+      price: 60,
+      rating: 3),
+];
+final orders = [
+  Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+  Order(asset: Config.assets.doll, title: "Doll", qte: 2),
+  Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+  Order(asset: Config.assets.doll, title: "Doll", qte: 2),
+];
+final hot = [
+  Order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
+  Order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
+  Order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
+  Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+];
+
+double money = 50.00;
+int currentIndex = 0;
+
+
+class DtailActor extends StatelessWidget {
+
+  const DtailActor({Key? key, required this.actor}) : super(key: key);
+  final Actor actor;
+
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery
-        .of(context)
-        .size
-        .width;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
         body: Container(
             child: Stack(
@@ -58,7 +99,7 @@ class DetailNFT extends StatelessWidget {
                             height: 35,
                             width: 20,
                             child: ListView.builder(
-                                itemCount: matches.length,
+                                itemCount: matches1.length,
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (ctx, i) {
                                   return Container(
@@ -73,7 +114,7 @@ class DetailNFT extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(15),
                                     ),
                                     child: AutoSizeText(
-                                      matches[i].text,
+                                      matches1[i].text,
                                       style: TextStyle(color: Colors.pink),
                                     ),
                                   );
@@ -90,169 +131,227 @@ class DetailNFT extends StatelessWidget {
                             child: AssetPriceChart(lineColor: Colors.pink,),
                           ),
                           ChartFilter(),
-                          SizedBox(height: 30),
-                          Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(30),
-                                ),
-                              ),
-                              child: SafeArea(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Hero(
-                                          tag: "${NFT.asset}&${NFT.title}",
-                                          child: Material(
-                                            color: Colors.transparent,
-                                            child: StatefulBuilder(
-                                              builder: (context, setState) {
-                                                return IconButton(
-                                                  onPressed: () {
-                                                    NFT.fav = !NFT.fav;
-                                                    setState(() {});
-                                                  },
-                                                  icon: Icon(
-                                                    NFT.fav
-                                                        ? MdiIcons.heart
-                                                        : FeatherIcons.heart,
-                                                    color: NFT.fav
-                                                        ? Config.colors.pink
-                                                        : Config.colors
-                                                        .menuColor,
-                                                  ),
-                                                );
-                                              },
-                                            ),
-                                          )),
-                                    ],
-                                  )),
+
+                          SizedBox(
+                            height: 135,
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              padding: EdgeInsets.symmetric(vertical: 10),
+                              itemBuilder: (context, i) {
+                                final order = hot[i];
+                                return Container(
+                                  margin: EdgeInsets.only(
+                                      left: i == 0 ? 20 : 0,
+                                      right: i == orders.length - 1 ? 20 : 15),
+                                  child: OrderComponent(
+                                    order: order,
+                                  ),
+                                );
+                              },
+                              itemCount: actors.length,
                             ),
                           ),
-                          MoreNFT(NFT: this.NFT,)
+                          SizedBox(height: 30),
+                          Container(height: 400,
+                        margin: const EdgeInsets.only(bottom: 10, left: 20, right: 20),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.white70,
+                              Colors.white,
+                            ],
+
+                          ),
+                        ),
+                    child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 16.0, left: 16),
+                        child: Text(
+                          "STATISTICS",
+                          style: TextStyle
+                            (color: Colors.black,
+                            fontSize: 14),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 4.0, left: 16),
+                        child: Text(
+                          "Upper Body",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14
+                          ),
+                        ),
+
+                      ),
+                            Padding(
+    padding: const EdgeInsets.symmetric(
+    horizontal: 16.0,
+    ),
+    child: Text(
+    "19,00€",
+    style: TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w900,
+    color: Colors.black45,
+    ))),
+
+                      Container(height: 100,
+                        width: double.infinity,
+                        margin: EdgeInsets.symmetric(horizontal: 15),
+                        child: AssetPriceChart(lineColor: Colors.pink,),
+                      ),
+                      ChartFilter(),
+                      Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text("Recent transactions"),
+                          ),
                         ],
+                      ),
+
+                      ListTile(
+                        onTap: () {
+                          _settingModalBottomSheet(context);
+                        },
+                        leading: const CircleAvatar(
+                          backgroundImage: AssetImage('images/p2.jpg'),),
+                        title: RichText(text: TextSpan(children: [
+                          TextSpan(text: 'Jason Martin\n'),
+                          TextSpan(
+                              text: 'Money Sent - Today 9AM\n', style: TextStyle(
+                              fontSize: 14, color: Colors.white70))
+                        ], style: TextStyle(color: Colors.black, fontSize: 18))),
+                        trailing: Text("- \$430", style: TextStyle(fontSize: 20),),
+                      ),
+
+                      ListTile(
+                        onTap: () {
+                          _settingModalBottomSheet(context);
+                        },
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage("images/p2.jpg"),),
+                        title: RichText(text: TextSpan(children: [
+                          TextSpan(text: 'Jason Martin\n'),
+                          TextSpan(text: 'Money received - Today 12PM\n',
+                              style: TextStyle(fontSize: 14, color: Colors.white70))
+                        ], style: TextStyle(color: Colors.black, fontSize: 18))),
+                        trailing: Text("+ \$220", style: TextStyle(fontSize: 20),),
+                      ),],
                       )
                   )
                 ]
+
+            ),
+
             )
-        )
-    );
+  ])));
   }
 }
 
-class NFT {
+
+void _settingModalBottomSheet(context) {
+  showModalBottomSheet(
+      context: context,
+      builder: (BuildContext bc) {
+        return Container(
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20), topLeft: Radius.circular(20))
+          ),
+          child: new Wrap(
+            children: <Widget>[
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center
+                , children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: CircleAvatar(radius: 25,
+                    backgroundImage: AssetImage("images/p2.jpg"),),
+                ),
+              ],),
+              Container(
+                alignment: Alignment.center,
+                child: Text("Jason Martin", style: TextStyle(
+                    fontSize: 20, fontWeight: FontWeight.bold),),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: Text("Amount to send"),
+              ),
+              SizedBox(height: 5,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: InkWell(
+                        onTap: () {
+                          if (money != 0) {
+                            money -= 10;
+                          }
+                        },
+                        child: CircleAvatar(
+                          child: Icon(Icons.remove, color: Colors.white,),
+                          radius: 20,
+                          backgroundColor: Colors.grey,)),
+                  ),
+                  SizedBox(width: 10,),
+                  Text("$money", style: TextStyle(
+                      fontSize: 38, fontWeight: FontWeight.bold),),
+                  SizedBox(width: 10,),
+                  Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: InkWell(
+                        onTap: () {
+
+                        },
+                        child: CircleAvatar(
+                          child: Icon(Icons.add, color: Colors.white,),
+                          radius: 20,
+                          backgroundColor: Colors.grey,)),
+                  ),
+
+                ],
+              ),
+              SizedBox(height: 10,),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Text("Send Money", style: TextStyle(
+                            fontSize: 22, color: Colors.white),),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      }
+  );
 }
 
-class MoreNFT extends StatelessWidget {
-  const MoreNFT({Key? key, required this.NFT}) : super(key: key);
-  final Actor NFT;
-  @override
-  Widget build(BuildContext context) {
-    double width = MediaQuery
-        .of(context)
-        .size
-        .width;
-        return Scaffold(
-            body: Container(
-                margin: const EdgeInsets.only(bottom: 10, left: 32, right: 32),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [const Color(0xFF20008B),
-    const Color(0xFF200087),
-    ],
-    ),
-    ),
-    child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-    SizedBox(
-    width: 20,
-    ),
-    Padding(
-    padding: const EdgeInsets.only(top: 16.0, left: 16),
-    child: Text(
-    "YOUR NEXT WORKOUT",
-    style: TextStyle(
-    color: Colors.white70,
-    fontSize: 16,
-    fontWeight: FontWeight.w600,
-    ),
-    ),
-    ),
-    Padding(
-    padding: const EdgeInsets.only(top: 4.0, left: 16),
-    child: Text(
-    "Upper Body",
-    style: TextStyle(
-    color: Colors.white,
-    fontSize: 24,
-    fontWeight: FontWeight.w800,
-    ),
-    ),
-    ),
-    Expanded(
-    child: Row(
-    children: <Widget>[
-    SizedBox(
-    width: 20,
-    ),
-    Container(
-    decoration: BoxDecoration(
-    borderRadius: BorderRadius.all(Radius.circular(25)),
-    color: const Color(0xFF5B4D9D),
-    ),
-    padding: const EdgeInsets.all(10),
-    child: Image.asset(
-    "assets/chest.png",
-    width: 50,
-    height: 50,
-    color: Colors.white,
-    ),
-    ),
-    SizedBox(
-    width: 10,
-    ),
-    Container(
-    decoration: BoxDecoration(
-    borderRadius: BorderRadius.all(Radius.circular(25)),
-    color: const Color(0xFF5B4D9D),
-    ),
-    padding: const EdgeInsets.all(10),
-    child: Image.asset(
-    "assets/back.png",
-    width: 50,
-    height: 50,
-    color: Colors.white,
-    ),
-    ),
-    SizedBox(
-    width: 10,
-    ),
-    Container(
-    decoration: BoxDecoration(
-    borderRadius: BorderRadius.all(Radius.circular(25)),
-    color: const Color(0xFF5B4D9D),
-    ),
-    padding: const EdgeInsets.all(10),
-    child: Image.asset(
-    "assets/biceps.png",
-    width: 50,
-    height: 50,
-    color: Colors.white,
-    ),
-    ),
-    ]
-    )
-    )
-    ]
-
-    )
-    ));
-
-    }
-                }
