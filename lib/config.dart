@@ -189,7 +189,10 @@ class _Asset {
   final kidkidd = "assets/9999.png";
   final tree = "assets/Tree.png";
   final city = "assets/city.png";
-  final forrest = "assets/8787.png";
+  final forrest = "assets/8787.jpg";
+  final ork = "assets/ork.png";
+  final goo = "assets/goo.png";
+  final shinobi = "assets/8898.png";
 }
 
 class _Color {

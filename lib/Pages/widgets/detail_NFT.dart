@@ -13,6 +13,7 @@ import 'package:biscuitpayment_app/models/actor.dart';
 import 'package:biscuitpayment_app/widgets/button.dart';
 import 'package:biscuitpayment_app/widgets/qte_widget.dart';
 
+import '../../drawer.dart';
 import '../favorite.dart';
 import '../home.dart';
 import 'NFT.dart';
@@ -24,23 +25,23 @@ import 'data bars.dart';
 
 final actors = [
   Actor(
-      asset: Config.assets.forrest,
-      title: "CryptoMoon",
+      asset: Config.assets.shinobi,
+      title: "ZTE NFT",
       price: 75.7,
       rating: 4),
   Actor(
-      asset: Config.assets.forrest,
-      title: "Cryptoniya city",
+      asset: Config.assets.ork,
+      title: "Cryptork",
       price: 60,
       rating: 3),
   Actor(
-      asset: Config.assets.forrest,
-      title: "Front man toy",
+      asset: Config.assets.goo,
+      title: "Crypto Goo",
       price: 60,
       rating: 3),
   Actor(
-      asset: Config.assets.forrest,
-      title: "Front man toy",
+      asset: Config.assets.ork,
+      title: "Cryptork",
       price: 60,
       rating: 3),
 ];
@@ -69,7 +70,11 @@ class DtailActor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Scaffold(
+    return Scaffold(appBar: AppBar(backgroundColor: Colors.pink,
+      title: Text("ASSET PAGE"),
+      centerTitle: true,
+    ),
+        drawer: NavigationDrawerWidget(),
         body: Container(
             child: Stack(
                 children: <Widget>[
@@ -184,7 +189,7 @@ class DtailActor extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 4.0, left: 16),
                         child: Text(
-                          "Upper Body",
+                          "Shinobi ZTE",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 14
@@ -226,9 +231,9 @@ class DtailActor extends StatelessWidget {
                         leading: const CircleAvatar(
                           backgroundImage: AssetImage('images/p2.jpg'),),
                         title: RichText(text: TextSpan(children: [
-                          TextSpan(text: 'Jason Martin\n'),
+                          TextSpan(text: 'Short Position'),
                           TextSpan(
-                              text: 'Money Sent - Today 9AM\n', style: TextStyle(
+                              text: 'Executed - Today 9AM\n', style: TextStyle(
                               fontSize: 14, color: Colors.white70))
                         ], style: TextStyle(color: Colors.black, fontSize: 18))),
                         trailing: Text("- \$430", style: TextStyle(fontSize: 20),),
@@ -241,8 +246,8 @@ class DtailActor extends StatelessWidget {
                         leading: CircleAvatar(
                           backgroundImage: AssetImage("images/p2.jpg"),),
                         title: RichText(text: TextSpan(children: [
-                          TextSpan(text: 'Jason Martin\n'),
-                          TextSpan(text: 'Money received - Today 12PM\n',
+                          TextSpan(text: 'Long Position'),
+                          TextSpan(text: 'Executed - Today 12PM\n',
                               style: TextStyle(fontSize: 14, color: Colors.white70))
                         ], style: TextStyle(color: Colors.black, fontSize: 18))),
                         trailing: Text("+ \$220", style: TextStyle(fontSize: 20),),
@@ -283,12 +288,12 @@ void _settingModalBottomSheet(context) {
               ],),
               Container(
                 alignment: Alignment.center,
-                child: Text("Jason Martin", style: TextStyle(
+                child: Text("Long Position", style: TextStyle(
                     fontSize: 20, fontWeight: FontWeight.bold),),
               ),
               Container(
                 alignment: Alignment.center,
-                child: Text("Amount to send"),
+                child: Text("Amount to execute"),
               ),
               SizedBox(height: 5,),
               Row(
@@ -341,7 +346,7 @@ void _settingModalBottomSheet(context) {
                     child: Center(
                       child: Padding(
                         padding: const EdgeInsets.all(12),
-                        child: Text("Send Money", style: TextStyle(
+                        child: Text("Execute", style: TextStyle(
                             fontSize: 22, color: Colors.white),),
                       ),
                     ),

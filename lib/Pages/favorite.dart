@@ -211,23 +211,23 @@ class Shop extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     final actors = [
       Actor(
-          asset: Config.assets.forrest,
-          title: "CryptoMoon",
+          asset: Config.assets.shinobi,
+          title: "ZTE NFT",
           price: 75.7,
           rating: 4),
       Actor(
-          asset: Config.assets.forrest,
-          title: "Cryptoniya city",
+          asset: Config.assets.ork,
+          title: "Cryptork",
           price: 60,
           rating: 3),
       Actor(
-          asset: Config.assets.forrest,
-          title: "Front man toy",
+          asset: Config.assets.goo,
+          title: "Crypto Goo",
           price: 60,
           rating: 3),
       Actor(
-          asset: Config.assets.forrest,
-          title: "Front man toy",
+          asset: Config.assets.ork,
+          title: "Cryptork",
           price: 60,
           rating: 3),
     ];
@@ -453,7 +453,7 @@ class Shop extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
                     child: Text(
-                      'Avatars',
+                      'DAO NFTs',
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 20,
@@ -480,8 +480,166 @@ class Shop extends StatelessWidget {
                                   context,
                                   DtailActor(
                                     actor: actor,
-                                  ));
+                                  )
+                              );
+                              Padding(
+                                padding: const EdgeInsets.only(top: 4.0, left: 16),
+                                child: Text(
+                                  "+11%",
+                                  style: TextStyle(
+                                      color: Colors.green,
+                                      fontSize: 14
+                                  ),
+                                ));
                             },
+
+                          ),
+
+
+                        );
+                      },
+                      itemCount: actors.length,
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
+                    child: Text(
+                      'Art NFTs',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 135,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      itemBuilder: (context, i) {
+                        final order = hot[i];
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: i == 0 ? 20 : 0,
+                              right: i == orders.length - 1 ? 20 : 15),
+                          child: OrderComponent(
+                            order: order,
+                          ),
+                        );
+                      },
+                      itemCount: actors.length,
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
+                    child: Text(
+                      'Music NFTs',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 135,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      itemBuilder: (context, i) {
+                        final order = hot[i];
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: i == 0 ? 20 : 0,
+                              right: i == orders.length - 1 ? 20 : 15),
+                          child: OrderComponent(
+                            order: order,
+                          ),
+                        );
+                      },
+                      itemCount: actors.length,
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
+                    child: Text(
+                      'Sport NFTs',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 135,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      itemBuilder: (context, i) {
+                        final order = hot[i];
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: i == 0 ? 20 : 0,
+                              right: i == orders.length - 1 ? 20 : 15),
+                          child: OrderComponent(
+                            order: order,
+                          ),
+                        );
+                      },
+                      itemCount: actors.length,
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
+                    child: Text(
+                      'Video games',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 135,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      itemBuilder: (context, i) {
+                        final order = hot[i];
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: i == 0 ? 20 : 0,
+                              right: i == orders.length - 1 ? 20 : 15),
+                          child: OrderComponent(
+                            order: order,
+                          ),
+                        );
+                      },
+                      itemCount: actors.length,
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
+                    child: Text(
+                      'Memes',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 135,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      itemBuilder: (context, i) {
+                        final order = hot[i];
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: i == 0 ? 20 : 0,
+                              right: i == orders.length - 1 ? 20 : 15),
+                          child: OrderComponent(
+                            order: order,
                           ),
                         );
                       },

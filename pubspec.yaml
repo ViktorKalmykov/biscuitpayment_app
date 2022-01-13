@@ -115,6 +115,9 @@ flutter:
     - assets/8888.png
     - assets/Tree.png
     - assets/city.png
+    - assets/ork.png
+    - assets/goo.png
+    - assets/8787.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
