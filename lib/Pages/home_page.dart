@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:biscuitpayment_app/Pages/shop.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:biscuitpayment_app/config.dart';
@@ -9,11 +10,9 @@ import 'package:biscuitpayment_app/pages/detail_actor.dart';
 import 'package:biscuitpayment_app/pages/favorite.dart';
 import 'package:biscuitpayment_app/pages/home.dart';
 import 'package:biscuitpayment_app/pages/setting.dart';
-import 'package:biscuitpayment_app/pages/shop.dart';
 import 'package:biscuitpayment_app/widgets/actor_component.dart';
 import 'package:biscuitpayment_app/widgets/bottom_navigation_bar.dart';
-import 'package:biscuitpayment_app/widgets/order_component.dart';
-import 'package:biscuitpayment_app/widgets/textField.dart';
+
 
 import '../drawer.dart';
 
@@ -49,7 +48,7 @@ class _HomePageState extends State<HomePage> {
           : page == 1
               ? Shop()
               : page == 2
-                  ? Favorite()
+                  ? FavoriteAvatars()
                   : page == 3
                       ? Setting()
                       : Container(),
