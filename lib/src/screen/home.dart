@@ -1,12 +1,16 @@
+import 'package:biscuitpayment_app/Pages/widgets/detail_NFT.dart';
 import 'package:biscuitpayment_app/data/drawer_items.dart';
 import 'package:biscuitpayment_app/model/drawer_item.dart';
+import 'package:biscuitpayment_app/models/order.dart';
 import 'package:biscuitpayment_app/page/deployment_page.dart';
 import 'package:biscuitpayment_app/page/get_started_page.dart';
 import 'package:biscuitpayment_app/page/performance_page.dart';
+import 'package:biscuitpayment_app/widgets/order_component.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:biscuitpayment_app/src/widget/cards.dart';
 import 'package:provider/provider.dart';
+import '../../config.dart';
 import '../../drawer.dart';
 import '../common.dart';
 import 'package:biscuitpayment_app/page/resources_page.dart';
@@ -18,6 +22,12 @@ import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+final hot = [
+  Order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
+  Order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
+  Order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
+  Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+];
 
 class Home extends StatefulWidget {
   @override
@@ -180,6 +190,8 @@ class _HomeState extends State<Home> {
                     ),
                   ),
 
+
+
                   Row(
                     children: <Widget>[
                       Padding(
@@ -217,12 +229,51 @@ class _HomeState extends State<Home> {
                     ], style: TextStyle(color: Colors.black, fontSize: 18))),
                     trailing: Text("+ \$220", style: TextStyle(fontSize: 20),),
                   ),
-                ],
+
+
+                  Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("Recent trades"),
+                      ),
+                    ],
+                  ),
+
+                  ListTile(
+                    onTap: () {
+                      _settingModalBottomSheet2(context);
+                    },
+                    leading: Icon(
+                      Icons.remove_circle_outline, color: Colors.pink,),
+                    title: RichText(text: TextSpan(children: [
+                      TextSpan(text: 'Short Position'),
+                      TextSpan(
+                          text: 'Executed - Today 9AM\n', style: TextStyle(
+                          fontSize: 12, color: Colors.white70))
+                    ], style: TextStyle(color: Colors.black, fontSize: 18))),
+                    trailing: Text("- \$430", style: TextStyle(fontSize: 20),),
+                  ),
+
+                  ListTile(
+                    onTap: () {
+                      _settingModalBottomSheet2(context);
+                    },
+                    leading: Icon(
+                      Icons.add_circle_outline, color: Colors.pink,),
+                    title: RichText(text: TextSpan(children: [
+                      TextSpan(text: 'Long Position'),
+                      TextSpan(text: 'Executed - Today 12PM\n',
+                          style: TextStyle(fontSize: 12, color: Colors.white70))
+                    ], style: TextStyle(color: Colors.black, fontSize: 18))),
+                    trailing: Text("+ \$220", style: TextStyle(fontSize: 20),),
+                  ),
+                    ],
+                  ),
+            )],
               ),
             ),
-          ],
-        ),
-      ),
+
       bottomNavigationBar: BubbleBottomBar(
         opacity: 0,
         currentIndex: currentIndex,
@@ -428,7 +479,100 @@ class _HomeState extends State<Home> {
   }
 }
 
+void _settingModalBottomSheet2(context) {
+  showModalBottomSheet(
+      context: context,
+      builder: (BuildContext bc) {
+        return Container(
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20), topLeft: Radius.circular(20))
+          ),
+          child: new Wrap(
+            children: <Widget>[
 
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center
+                , children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(Icons.compare_arrows, color: Colors.pink,),
+                ),
+              ],),
+              Container(
+                alignment: Alignment.center,
+                child: Text("Long Position", style: TextStyle(
+                    fontSize: 20, fontWeight: FontWeight.bold),),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: Text("Amount to execute"),
+              ),
+              SizedBox(height: 5,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: InkWell(
+                        onTap: () {
+                          if (money != 0) {
+                            money -= 10;
+                          }
+                        },
+                        child: CircleAvatar(
+                          child: Icon(Icons.remove, color: Colors.white,),
+                          radius: 20,
+                          backgroundColor: Colors.grey,)),
+                  ),
+                  SizedBox(width: 10,),
+                  Text("$money", style: TextStyle(
+                      fontSize: 38, fontWeight: FontWeight.bold),),
+                  SizedBox(width: 10,),
+                  Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: InkWell(
+                        onTap: () {
+
+                        },
+                        child: CircleAvatar(
+                          child: Icon(Icons.add, color: Colors.white,),
+                          radius: 20,
+                          backgroundColor: Colors.grey,)),
+                  ),
+
+                ],
+              ),
+              SizedBox(height: 10,),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Text("Execute", style: TextStyle(
+                            fontSize: 22, color: Colors.white),),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      }
+  );
+}
 
 
 

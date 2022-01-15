@@ -118,7 +118,17 @@ flutter:
     - assets/ork.png
     - assets/goo.png
     - assets/8787.jpg
-
+    - assets/hero.png
+    - assets/Squid.png
+    - assets/eminem.png
+    - assets/obama.png
+    - assets/trump.png
+    - assets/mbappe.png
+    - assets/ronaldo.png
+    - assets/ronnie.gif
+    - assets/pizza.png
+    - assets/art.png
+    - assets/boy.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

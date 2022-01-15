@@ -108,7 +108,12 @@ List matches1 = [
   Match(isSelected: false, text: "Other"),
 ];
 
-
+final hot2 = [
+  Order(asset: Config.assets.pokemon, title: "Cryptomon", qte: 5),
+  Order(asset: Config.assets.squid, title: "Squid NFT", qte: 2),
+  Order(asset: Config.assets.pokemon2, title: "Cryptonyak", qte: 5),
+  Order(asset: Config.assets.kidkidd, title: "Red Ninja", qte: 5),
+];
 
 class Style {
   static Color primaryColor = Color(0xff455A6F);
@@ -231,6 +236,28 @@ class Shop extends StatelessWidget {
           price: 60,
           rating: 3),
     ];
+    final actors2 = [
+      Actor(
+          asset: Config.assets.pokemon,
+          title: "ZTE NFT",
+          price: 75.7,
+          rating: 4),
+      Actor(
+          asset: Config.assets.squid,
+          title: "Cryptork",
+          price: 60,
+          rating: 3),
+      Actor(
+          asset: Config.assets.pokemon2,
+          title: "Crypto Goo",
+          price: 60,
+          rating: 3),
+      Actor(
+          asset: Config.assets.ork,
+          title: "Cryptork",
+          price: 60,
+          rating: 3),
+    ];
     final orders = [
       Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
       Order(asset: Config.assets.doll, title: "Doll", qte: 2),
@@ -250,7 +277,24 @@ class Shop extends StatelessWidget {
       Order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
       Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
     ];
-
+    final hot3 = [
+      Order(asset: Config.assets.eminem, title: "Rap celeb", qte: 5),
+      Order(asset: Config.assets.obama, title: "Crypto politics", qte: 2),
+      Order(asset: Config.assets.trump, title: "Crypto boss", qte: 5),
+      Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+    ];
+    final hot4 = [
+      Order(asset: Config.assets.ronnie, title: "Crypto Ronnie", qte: 5),
+      Order(asset: Config.assets.ronaldo, title: "Crypto Goat", qte: 2),
+      Order(asset: Config.assets.mbappe, title: "Crypto Mbappe", qte: 5),
+      Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+    ];
+    final hot5 = [
+      Order(asset: Config.assets.boy, title: "Crypto Boy", qte: 5),
+      Order(asset: Config.assets.pizza, title: "Crypto Pizza", qte: 2),
+      Order(asset: Config.assets.art, title: "Crypto Art", qte: 5),
+      Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+    ];
     return Scaffold(
       body: Container(
         child: Stack(
@@ -517,7 +561,7 @@ class Shop extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       padding: EdgeInsets.symmetric(vertical: 10),
                       itemBuilder: (context, i) {
-                        final order = hot[i];
+                        final order = hot5[i];
                         return Container(
                           margin: EdgeInsets.only(
                               left: i == 0 ? 20 : 0,
@@ -533,7 +577,7 @@ class Shop extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
                     child: Text(
-                      'Music NFTs',
+                      'Celebs NFTs',
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 20,
@@ -546,7 +590,7 @@ class Shop extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       padding: EdgeInsets.symmetric(vertical: 10),
                       itemBuilder: (context, i) {
-                        final order = hot[i];
+                        final order = hot3[i];
                         return Container(
                           margin: EdgeInsets.only(
                               left: i == 0 ? 20 : 0,
@@ -575,7 +619,7 @@ class Shop extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       padding: EdgeInsets.symmetric(vertical: 10),
                       itemBuilder: (context, i) {
-                        final order = hot[i];
+                        final order = hot4[i];
                         return Container(
                           margin: EdgeInsets.only(
                               left: i == 0 ? 20 : 0,
@@ -604,7 +648,7 @@ class Shop extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       padding: EdgeInsets.symmetric(vertical: 10),
                       itemBuilder: (context, i) {
-                        final order = hot[i];
+                        final order = hot2[i];
                         return Container(
                           margin: EdgeInsets.only(
                               left: i == 0 ? 20 : 0,

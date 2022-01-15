@@ -207,6 +207,28 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    final actors2 = [
+      Actor(
+          asset: Config.assets.shinobi,
+          title: "ZTE NFT",
+          price: 75.7,
+          rating: 4),
+      Actor(
+          asset: Config.assets.ork,
+          title: "Cryptork",
+          price: 60,
+          rating: 3),
+      Actor(
+          asset: Config.assets.goo,
+          title: "Crypto Goo",
+          price: 60,
+          rating: 3),
+      Actor(
+          asset: Config.assets.ork,
+          title: "Cryptork",
+          price: 60,
+          rating: 3),
+    ];
     final actors = [
       Actor(
           asset: Config.assets.u1,
@@ -422,7 +444,7 @@ class Home extends StatelessWidget {
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, i) {
-                        final actor = actors[i];
+                        final actor = actors2[i];
                         return Container(
                           margin: EdgeInsets.only(
                               left: i == 0 ? 20 : 0,

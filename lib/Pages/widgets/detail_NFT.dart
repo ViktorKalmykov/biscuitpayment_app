@@ -45,6 +45,30 @@ final actors = [
       price: 60,
       rating: 3),
 ];
+
+final actors2 = [
+  Actor(
+      asset: Config.assets.pokemon,
+      title: "ZTE NFT",
+      price: 75.7,
+      rating: 4),
+  Actor(
+      asset: Config.assets.squid,
+      title: "Cryptork",
+      price: 60,
+      rating: 3),
+  Actor(
+      asset: Config.assets.pokemon2,
+      title: "Crypto Goo",
+      price: 60,
+      rating: 3),
+  Actor(
+      asset: Config.assets.ork,
+      title: "Cryptork",
+      price: 60,
+      rating: 3),
+];
+
 final orders = [
   Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
   Order(asset: Config.assets.doll, title: "Doll", qte: 2),
@@ -57,7 +81,18 @@ final hot = [
   Order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
   Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
 ];
-
+final hot2 = [
+  Order(asset: Config.assets.pokemon, title: "Cryptomon", qte: 5),
+  Order(asset: Config.assets.squid, title: "Squid NFT", qte: 2),
+  Order(asset: Config.assets.pokemon2, title: "Cryptonyak", qte: 5),
+  Order(asset: Config.assets.kidkidd, title: "Red Ninja", qte: 5),
+];
+final hot3 = [
+  Order(asset: Config.assets.eminem, title: "Rap celeb", qte: 5),
+  Order(asset: Config.assets.obama, title: "Crypto politics", qte: 2),
+  Order(asset: Config.assets.trump, title: "Crypto boss", qte: 5),
+  Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+];
 double money = 50.00;
 int currentIndex = 0;
 
@@ -130,12 +165,8 @@ class DtailActor extends StatelessWidget {
 
                           SizedBox(height: 5),
                           Price(percentChange: 11),
-                          Container(height: 170,
-                            width: double.infinity,
-                            margin: EdgeInsets.symmetric(horizontal: 15),
-                            child: AssetPriceChart(lineColor: Colors.pink,),
-                          ),
-                          ChartFilter(),
+                          Image.asset('assets/ork.png',
+                              width:30,height:180),
 
                           SizedBox(
                             height: 135,
@@ -219,7 +250,7 @@ class DtailActor extends StatelessWidget {
                         children: <Widget>[
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text("Recent transactions"),
+                            child: Text("Recent trades"),
                           ),
                         ],
                       ),
@@ -228,13 +259,13 @@ class DtailActor extends StatelessWidget {
                         onTap: () {
                           _settingModalBottomSheet(context);
                         },
-                        leading: const CircleAvatar(
-                          backgroundImage: AssetImage('images/p2.jpg'),),
+                        leading: Icon(
+                          Icons.remove_circle_outline, color: Colors.pink,),
                         title: RichText(text: TextSpan(children: [
                           TextSpan(text: 'Short Position'),
                           TextSpan(
                               text: 'Executed - Today 9AM\n', style: TextStyle(
-                              fontSize: 14, color: Colors.white70))
+                              fontSize: 12, color: Colors.white70))
                         ], style: TextStyle(color: Colors.black, fontSize: 18))),
                         trailing: Text("- \$430", style: TextStyle(fontSize: 20),),
                       ),
@@ -243,12 +274,12 @@ class DtailActor extends StatelessWidget {
                         onTap: () {
                           _settingModalBottomSheet(context);
                         },
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage("images/p2.jpg"),),
+                        leading: Icon(
+                          Icons.add_circle_outline, color: Colors.pink,),
                         title: RichText(text: TextSpan(children: [
                           TextSpan(text: 'Long Position'),
                           TextSpan(text: 'Executed - Today 12PM\n',
-                              style: TextStyle(fontSize: 14, color: Colors.white70))
+                              style: TextStyle(fontSize: 12, color: Colors.white70))
                         ], style: TextStyle(color: Colors.black, fontSize: 18))),
                         trailing: Text("+ \$220", style: TextStyle(fontSize: 20),),
                       ),],
@@ -282,8 +313,7 @@ void _settingModalBottomSheet(context) {
                 , children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: CircleAvatar(radius: 25,
-                    backgroundImage: AssetImage("images/p2.jpg"),),
+                  child: Icon(Icons.compare_arrows, color: Colors.pink,),
                 ),
               ],),
               Container(

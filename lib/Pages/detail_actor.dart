@@ -9,13 +9,19 @@ import 'package:biscuitpayment_app/models/actor.dart';
 import 'package:biscuitpayment_app/widgets/button.dart';
 import 'package:biscuitpayment_app/widgets/qte_widget.dart';
 
+import '../drawer.dart';
+
 class DetailActor extends StatelessWidget {
   const DetailActor({Key? key, required this.actor}) : super(key: key);
   final Actor actor;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Scaffold(
+    return Scaffold(appBar: AppBar(backgroundColor: Colors.pink,
+      title: Text("ASSET PAGE"),
+      centerTitle: true,
+    ),
+      drawer: NavigationDrawerWidget(),
       body: Column(
         children: [
           Expanded(

@@ -7,6 +7,7 @@ import '../../../../constants.dart';
 import '../chart.dart';
 import '../storage_info_card.dart';
 import 'line chart designed.dart';
+import 'new chart 2.dart';
 
 
 class StarageDetails2 extends StatelessWidget {
@@ -25,7 +26,7 @@ class StarageDetails2 extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: defaultPadding),
-          LineCharts(),
+          LineCharts2(),
           StorageInfoCard(
             svgSrc: "assets/icons/Documents.svg",
             title: "YTD Performance",

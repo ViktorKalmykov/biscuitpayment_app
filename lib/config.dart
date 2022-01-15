@@ -193,6 +193,18 @@ class _Asset {
   final ork = "assets/ork.png";
   final goo = "assets/goo.png";
   final shinobi = "assets/8898.png";
+  final squid = "assets/Squid.png";
+  final pokemon = "assets/hero.png";
+  final pokemon2 = "assets/999.png";
+  final obama = "assets/obama.png";
+  final eminem = "assets/eminem.png";
+  final trump = "assets/trump.png";
+  final ronnie = "assets/ronnie.gif";
+  final ronaldo = "assets/ronaldo.png";
+  final mbappe = "assets/mbappe.png";
+  final art = "assets/art.png";
+  final pizza = "assets/pizza.png";
+  final boy = "assets/boy.png";
 }
 
 class _Color {

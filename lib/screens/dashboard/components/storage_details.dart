@@ -21,7 +21,7 @@ class StarageDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Storage Details",
+            "Portfolio composition",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w500,
@@ -31,26 +31,26 @@ class StarageDetails extends StatelessWidget {
           Chart(),
           StorageInfoCard(
             svgSrc: "assets/icons/Documents.svg",
-            title: "Documents Files",
-            amountOfFiles: "1.3GB",
-            numOfFiles: 1328,
+            title: "NFT assets",
+            amountOfFiles: "1,500 USD",
+            numOfFiles: 2700,
           ),
           StorageInfoCard(
             svgSrc: "assets/icons/media.svg",
-            title: "Media Files",
-            amountOfFiles: "15.3GB",
+            title: "Avatars",
+            amountOfFiles: "1,000 USD",
             numOfFiles: 1328,
           ),
           StorageInfoCard(
             svgSrc: "assets/icons/folder.svg",
-            title: "Other Files",
-            amountOfFiles: "1.3GB",
+            title: "Rights of use",
+            amountOfFiles: "1,000 USD",
             numOfFiles: 1328,
           ),
           StorageInfoCard(
             svgSrc: "assets/icons/unknown.svg",
-            title: "Unknown",
-            amountOfFiles: "1.3GB",
+            title: "Other assets",
+            amountOfFiles: "500 USD",
             numOfFiles: 140,
           ),
         ],
