@@ -180,6 +180,32 @@ class DtailActor extends StatelessWidget {
                             ], style: TextStyle(color: Colors.black, fontSize: 18))),
                             trailing: Text("\$19.01", style: TextStyle(fontSize: 20),),
                           ),
+                          SizedBox(height: 5),
+                          ListTile(
+                            onTap: () {
+                              _settingModalBottomSheet(context);
+                            },
+                            leading: Icon(
+                              Icons.trending_up, color: Colors.pink,),
+                            title: RichText(text: TextSpan(children: [
+                              TextSpan(text: 'YTD return'),
+
+                            ], style: TextStyle(color: Colors.black, fontSize: 14))),
+                            trailing: Text("217%", style: TextStyle(fontSize: 14),),
+                          ),
+                          SizedBox(height: 5),
+                          ListTile(
+                            onTap: () {
+                              _settingModalBottomSheet(context);
+                            },
+                            leading: Icon(
+                              Icons.trending_down, color: Colors.pink,),
+                            title: RichText(text: TextSpan(children: [
+                              TextSpan(text: 'Max. drawdawn'),
+
+                            ], style: TextStyle(color: Colors.black, fontSize: 14))),
+                            trailing: Text("29%", style: TextStyle(fontSize: 14),),
+                          ),
                           SizedBox(
                             height: 135,
                             child: ListView.builder(

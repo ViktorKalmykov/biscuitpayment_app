@@ -205,6 +205,9 @@ class _Asset {
   final art = "assets/art.png";
   final pizza = "assets/pizza.png";
   final boy = "assets/boy.png";
+  final castle = "assets/castle.gif";
+  final cathederal = "assets/cathederal.gif";
+  final ape = "assets/ape.gif";
 }
 
 class _Color {

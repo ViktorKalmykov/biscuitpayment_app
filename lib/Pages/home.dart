@@ -207,6 +207,28 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    final actors3 = [
+      Actor(
+          asset: Config.assets.cathederal,
+          title: "Cathederal plot",
+          price: 75.7,
+          rating: 4),
+      Actor(
+          asset: Config.assets.castle,
+          title: "Castle plot",
+          price: 60,
+          rating: 3),
+      Actor(
+          asset: Config.assets.ape,
+          title: "City plot",
+          price: 60,
+          rating: 3),
+      Actor(
+          asset: Config.assets.ork,
+          title: "Cryptork",
+          price: 60,
+          rating: 3),
+    ];
     final actors2 = [
       Actor(
           asset: Config.assets.shinobi,
@@ -596,7 +618,46 @@ class Home extends StatelessWidget {
                       ),
                     ),
                   ),
-
+                  SizedBox(height: 14),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
+                    child: Text(
+                      'Rights of use',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  SizedBox(
+                    height: 330,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, i) {
+                        final actor = actors3[i];
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: i == 0 ? 20 : 0,
+                              right: i == actors.length - 1 ? 20 : 8),
+                          child: ActorComponent(
+                            actor: actor,
+                            onPressed: () {
+                              Config.navigate(
+                                  context,
+                                  DetailActor(
+                                    actor: actor,
+                                  ));
+                            },
+                          ),
+                        );
+                      },
+                      itemCount: actors.length,
+                    ),
+                  ),
+                  SizedBox(height: 14),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
                     child: Text(

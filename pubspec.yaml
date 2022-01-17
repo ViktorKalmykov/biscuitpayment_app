@@ -129,6 +129,9 @@ flutter:
     - assets/pizza.png
     - assets/art.png
     - assets/boy.png
+    - assets/cathederal.gif
+    - assets/castle.gif
+    - assets/ape.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
