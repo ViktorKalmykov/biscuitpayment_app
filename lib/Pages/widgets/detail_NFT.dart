@@ -167,7 +167,19 @@ class DtailActor extends StatelessWidget {
                           Price(percentChange: 11),
                           Image.asset('assets/ork.png',
                               width:30,height:180),
+                          SizedBox(height: 50),
+                          ListTile(
+                            onTap: () {
+                              _settingModalBottomSheet(context);
+                            },
+                            leading: Icon(
+                              Icons.equalizer, color: Colors.pink,),
+                            title: RichText(text: TextSpan(children: [
+                              TextSpan(text: 'MOST RECENT PRICE'),
 
+                            ], style: TextStyle(color: Colors.black, fontSize: 18))),
+                            trailing: Text("\$19.01", style: TextStyle(fontSize: 20),),
+                          ),
                           SizedBox(
                             height: 135,
                             child: ListView.builder(
@@ -205,6 +217,7 @@ class DtailActor extends StatelessWidget {
                     child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
+
                       SizedBox(
                         width: 20,
                       ),
@@ -265,7 +278,7 @@ class DtailActor extends StatelessWidget {
                           TextSpan(text: 'Short Position'),
                           TextSpan(
                               text: 'Executed - Today 9AM\n', style: TextStyle(
-                              fontSize: 12, color: Colors.white70))
+                              fontSize: 12, color: Colors.black))
                         ], style: TextStyle(color: Colors.black, fontSize: 18))),
                         trailing: Text("- \$430", style: TextStyle(fontSize: 20),),
                       ),
@@ -279,10 +292,24 @@ class DtailActor extends StatelessWidget {
                         title: RichText(text: TextSpan(children: [
                           TextSpan(text: 'Long Position'),
                           TextSpan(text: 'Executed - Today 12PM\n',
-                              style: TextStyle(fontSize: 12, color: Colors.white70))
+                              style: TextStyle(fontSize: 12, color: Colors.black))
                         ], style: TextStyle(color: Colors.black, fontSize: 18))),
                         trailing: Text("+ \$220", style: TextStyle(fontSize: 20),),
-                      ),],
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: (Text("Offering ends 18.01.2022", style: TextStyle
+                            (color: Colors.redAccent,
+                            fontSize: 14),)),
+                          ),
+                        ],
+                      ),
+
+
+    ],
+
                       )
                   )
                 ]

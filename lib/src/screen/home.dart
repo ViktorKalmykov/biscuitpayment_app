@@ -1,3 +1,4 @@
+import 'package:biscuitpayment_app/Pages/on_boarding.dart';
 import 'package:biscuitpayment_app/Pages/widgets/detail_NFT.dart';
 import 'package:biscuitpayment_app/data/drawer_items.dart';
 import 'package:biscuitpayment_app/model/drawer_item.dart';
@@ -274,6 +275,7 @@ class _HomeState extends State<Home> {
               ),
             ),
 
+
       bottomNavigationBar: BubbleBottomBar(
         opacity: 0,
         currentIndex: currentIndex,
@@ -291,7 +293,7 @@ class _HomeState extends State<Home> {
                 Icons.add,
                 size: 30, color: Colors.black,
               ),
-              title: Text("Home")),
+          title: Text("Home")),
           BubbleBottomBarItem(
               backgroundColor: Colors.black,
               icon: Icon(
@@ -575,4 +577,9 @@ void _settingModalBottomSheet2(context) {
 }
 
 
+void selectItem(BuildContext context, int index) {
+  final navigateTo = (page) => Navigator.of(context).push(MaterialPageRoute(
+    builder: (context) => page,
+  ));
 
+  Navigator.of(context).pop();}
