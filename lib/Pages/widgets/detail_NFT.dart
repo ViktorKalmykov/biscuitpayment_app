@@ -4,6 +4,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biscuitpayment_app/Pages/widgets/NFT.dart';
 import 'package:biscuitpayment_app/models/order.dart';
 import 'package:biscuitpayment_app/widgets/order_component.dart';
+import 'package:clay_containers/widgets/clay_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -337,7 +338,135 @@ class DtailActor extends StatelessWidget {
     ],
 
                       )
-                  )
+                  ),
+                          SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              ClayContainer(
+                                height: 140,
+                                width: width * 0.42,
+                                emboss: true,
+                                borderRadius: 16,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 16.0,
+                                        right: 16,
+                                        top: 16,
+                                      ),
+                                      child: Text(
+                                        "Sold stats",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 12.0,
+                                      ),
+                                      child: Text(
+                                        "19,00€",
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.green,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(height: 50,
+                                      width: double.infinity,
+                                      margin: EdgeInsets.symmetric(horizontal: 15),
+                                      child: AssetPriceChart(lineColor: Colors.pink,),
+                                    ),
+                                    Spacer(),
+                                    Container(
+                                      margin: const EdgeInsets.only(
+                                        bottom: 16,
+                                        left: 16,
+                                        right: 16,
+                                      ),
+                                      height: 10,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Colors.black45,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              ClayContainer(
+                                height: 140,
+                                width: width * 0.42,
+                                borderRadius: 16,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 16.0,
+                                        right: 16,
+                                        top: 16,
+                                      ),
+                                      child: Text(
+                                        "Unlock enhanced statistics",
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 16.0,
+                                      ),
+                                      child: Text(
+                                        "By purchasing subscription",
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black45,
+                                        ),
+                                      ),
+                                    ),
+                                    Spacer(),
+                                    Align(
+                                      alignment: Alignment.bottomRight,
+                                      child: Container(
+                                        margin: const EdgeInsets.only(bottom: 16, right: 16),
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              Color(0xFFFF559F),
+                                              Color(0xFFCF5CCF),
+                                              Color(0xFFFF57AC),
+                                              Color(0xFFFF6D91),
+                                              Color(0xFFFF8D7E),
+                                              Color(0xFFB6BAA6),
+                                            ],
+                                          ),
+                                        ),
+                                        child: Icon(
+                                          Icons.arrow_forward,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 15),
                 ]
 
             ),
