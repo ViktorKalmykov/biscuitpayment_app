@@ -345,7 +345,7 @@ class DtailActor extends StatelessWidget {
                             children: <Widget>[
                               ClayContainer(
                                 height: 140,
-                                width: width * 0.42,
+                                width: width * 0.27,
                                 emboss: true,
                                 borderRadius: 16,
                                 child: Column(
@@ -402,7 +402,64 @@ class DtailActor extends StatelessWidget {
                               ),
                               ClayContainer(
                                 height: 140,
-                                width: width * 0.42,
+                                width: width * 0.27,
+                                emboss: true,
+                                borderRadius: 16,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 16.0,
+                                        right: 16,
+                                        top: 16,
+                                      ),
+                                      child: Text(
+                                        "Bidding stats",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 12.0,
+                                      ),
+                                      child: Text(
+                                        "21,00€",
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.green,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(height: 50,
+                                      width: double.infinity,
+                                      margin: EdgeInsets.symmetric(horizontal: 15),
+                                      child: AssetPriceChart(lineColor: Colors.blue,),
+                                    ),
+                                    Spacer(),
+                                    Container(
+                                      margin: const EdgeInsets.only(
+                                        bottom: 16,
+                                        left: 16,
+                                        right: 16,
+                                      ),
+                                      height: 10,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Colors.black45,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              ClayContainer(
+                                height: 140,
+                                width: width * 0.27,
                                 borderRadius: 16,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -416,7 +473,7 @@ class DtailActor extends StatelessWidget {
                                       child: Text(
                                         "Unlock enhanced statistics",
                                         style: TextStyle(
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           fontWeight: FontWeight.w900,
                                           color: Colors.black,
                                         ),
@@ -429,7 +486,7 @@ class DtailActor extends StatelessWidget {
                                       child: Text(
                                         "By purchasing subscription",
                                         style: TextStyle(
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.black45,
                                         ),

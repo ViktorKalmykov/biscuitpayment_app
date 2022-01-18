@@ -269,7 +269,8 @@ class _HomeState extends State<Home> {
                     ], style: TextStyle(color: Colors.black, fontSize: 18))),
                     trailing: Text("+ \$220", style: TextStyle(fontSize: 20),),
                   ),
-                    ],
+
+                ],
                   ),
             )],
               ),
