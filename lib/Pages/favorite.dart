@@ -466,6 +466,17 @@ class Shop extends StatelessWidget {
                   ),
                   Trending(),
                   SizedBox(height: 20),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
+                    child: Text(
+                      'Market statistics',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
@@ -649,37 +660,7 @@ class Shop extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15),
-                  SizedBox(height: 14),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
-                    child: Text(
-                      'Best on List',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 135,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      itemBuilder: (context, i) {
-                        final order = orders[i];
-                        return Container(
-                          margin: EdgeInsets.only(
-                              left: i == 0 ? 20 : 0,
-                              right: i == orders.length - 1 ? 20 : 15),
-                          child: OrderComponent(
-                            order: order,
-                          ),
-                        );
-                      },
-                      itemCount: actors.length,
-                    ),
-                  ),
+                  SizedBox(height: 20),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
                     child: Text(
@@ -690,9 +671,7 @@ class Shop extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 15,
-                  ),
+
                   SizedBox(
                     height: 330,
                     child: ListView.builder(
