@@ -208,6 +208,11 @@ class _Asset {
   final castle = "assets/castle.gif";
   final cathederal = "assets/cathederal.gif";
   final ape = "assets/ape.gif";
+  final muda = "assets/muda.gif";
+  final ora = "assets/ora.gif";
+  final xmen = "assets/xmen.gif";
+  final jotaro = "assets/jotaro.gif";
+  final gang = "assets/gang.gif";
 }
 
 class _Color {

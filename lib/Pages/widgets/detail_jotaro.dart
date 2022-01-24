@@ -98,9 +98,9 @@ double money = 50.00;
 int currentIndex = 0;
 
 
-class DtailActor extends StatelessWidget {
+class DtailJotaro extends StatelessWidget {
 
-  const DtailActor({Key? key, required this.actor}) : super(key: key);
+  const DtailJotaro({Key? key, required this.actor}) : super(key: key);
   final Actor actor;
 
   @override
@@ -131,7 +131,7 @@ class DtailActor extends StatelessWidget {
                     ),
                   ),
                   SafeArea(
-                      child: ListView(
+                    child: ListView(
                         children: <Widget>[
 
                           SizedBox(height: 10),
@@ -166,7 +166,7 @@ class DtailActor extends StatelessWidget {
 
                           SizedBox(height: 5),
                           Price(percentChange: 11),
-                          Image.asset('assets/ork.png',
+                          Image.asset('assets/jotaro.gif',
                               width:30,height:180),
                           SizedBox(height: 50),
                           ListTile(
@@ -179,7 +179,7 @@ class DtailActor extends StatelessWidget {
                               TextSpan(text: 'MOST RECENT PRICE'),
 
                             ], style: TextStyle(color: Colors.black, fontSize: 18))),
-                            trailing: Text("\$19.01", style: TextStyle(fontSize: 20),),
+                            trailing: Text("\$20.01", style: TextStyle(fontSize: 20),),
                           ),
                           SizedBox(height: 5),
                           ListTile(
@@ -192,7 +192,7 @@ class DtailActor extends StatelessWidget {
                               TextSpan(text: 'YTD return'),
 
                             ], style: TextStyle(color: Colors.black, fontSize: 14))),
-                            trailing: Text("217%", style: TextStyle(fontSize: 14),),
+                            trailing: Text("398%", style: TextStyle(fontSize: 14),),
                           ),
                           SizedBox(height: 5),
                           ListTile(
@@ -205,7 +205,7 @@ class DtailActor extends StatelessWidget {
                               TextSpan(text: 'Max. drawdawn'),
 
                             ], style: TextStyle(color: Colors.black, fontSize: 14))),
-                            trailing: Text("29%", style: TextStyle(fontSize: 14),),
+                            trailing: Text("18%", style: TextStyle(fontSize: 14),),
                           ),
                           SizedBox(
                             height: 135,
@@ -228,117 +228,117 @@ class DtailActor extends StatelessWidget {
                           ),
                           SizedBox(height: 30),
                           Container(height: 430,
-                        margin: const EdgeInsets.only(bottom: 10, left: 20, right: 20),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              Colors.white70,
-                              Colors.white,
-                            ],
+                              margin: const EdgeInsets.only(bottom: 10, left: 20, right: 20),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(30)),
+                                gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                    Colors.white70,
+                                    Colors.white,
+                                  ],
 
+                                ),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 16.0, left: 16),
+                                    child: Text(
+                                      "STATISTICS",
+                                      style: TextStyle
+                                        (color: Colors.black,
+                                          fontSize: 14),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 4.0, left: 16),
+                                    child: Text(
+                                      "Stand NFT",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 14
+                                      ),
+                                    ),
+
+                                  ),
+                                  Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 16.0,
+                                      ),
+                                      child: Text(
+                                          "20,00€",
+                                          style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w900,
+                                            color: Colors.black45,
+                                          ))),
+
+                                  Container(height: 100,
+                                    width: double.infinity,
+                                    margin: EdgeInsets.symmetric(horizontal: 15),
+                                    child: AssetPriceChart(lineColor: Colors.pink,),
+                                  ),
+                                  ChartFilter(),
+                                  Row(
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text("Recent trades"),
+                                      ),
+                                    ],
+                                  ),
+
+                                  ListTile(
+                                    onTap: () {
+                                      _settingModalBottomSheet(context);
+                                    },
+                                    leading: Icon(
+                                      Icons.remove_circle_outline, color: Colors.pink,),
+                                    title: RichText(text: TextSpan(children: [
+                                      TextSpan(text: 'Short Position\n'),
+                                      TextSpan(
+                                          text: 'Tap to Execute \n', style: TextStyle(
+                                          fontSize: 12, color: Colors.black))
+                                    ], style: TextStyle(color: Colors.black, fontSize: 18))),
+                                    trailing: Text("- \$630", style: TextStyle(fontSize: 20),),
+                                  ),
+
+                                  ListTile(
+                                    onTap: () {
+                                      _settingModalBottomSheet(context);
+                                    },
+                                    leading: Icon(
+                                      Icons.add_circle_outline, color: Colors.pink,),
+                                    title: RichText(text: TextSpan(children: [
+                                      TextSpan(text: 'Long Position\n'),
+                                      TextSpan(text: 'Tap to Execute\n',
+                                          style: TextStyle(fontSize: 12, color: Colors.black))
+                                    ], style: TextStyle(color: Colors.black, fontSize: 18))),
+                                    trailing: Text("+ \$820", style: TextStyle(fontSize: 20),),
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: (Text("Offering ends 29.01.2022", style: TextStyle
+                                          (color: Colors.redAccent,
+                                            fontSize: 14),)),
+                                      ),
+                                    ],
+                                  ),
+
+
+                                ],
+
+                              )
                           ),
-                        ),
-                    child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 16.0, left: 16),
-                        child: Text(
-                          "STATISTICS",
-                          style: TextStyle
-                            (color: Colors.black,
-                            fontSize: 14),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 4.0, left: 16),
-                        child: Text(
-                          "Shinobi ZTE",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14
-                          ),
-                        ),
-
-                      ),
-                            Padding(
-    padding: const EdgeInsets.symmetric(
-    horizontal: 16.0,
-    ),
-    child: Text(
-    "19,00€",
-    style: TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.w900,
-    color: Colors.black45,
-    ))),
-
-                      Container(height: 100,
-                        width: double.infinity,
-                        margin: EdgeInsets.symmetric(horizontal: 15),
-                        child: AssetPriceChart(lineColor: Colors.pink,),
-                      ),
-                      ChartFilter(),
-                      Row(
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text("Recent trades"),
-                          ),
-                        ],
-                      ),
-
-                      ListTile(
-                        onTap: () {
-                          _settingModalBottomSheet(context);
-                        },
-                        leading: Icon(
-                          Icons.remove_circle_outline, color: Colors.pink,),
-                        title: RichText(text: TextSpan(children: [
-                          TextSpan(text: 'Short Position\n'),
-                          TextSpan(
-                              text: 'Tap to Execute \n', style: TextStyle(
-                              fontSize: 12, color: Colors.black))
-                        ], style: TextStyle(color: Colors.black, fontSize: 18))),
-                        trailing: Text("- \$430", style: TextStyle(fontSize: 20),),
-                      ),
-
-                      ListTile(
-                        onTap: () {
-                          _settingModalBottomSheet(context);
-                        },
-                        leading: Icon(
-                          Icons.add_circle_outline, color: Colors.pink,),
-                        title: RichText(text: TextSpan(children: [
-                          TextSpan(text: 'Long Position\n'),
-                          TextSpan(text: 'Tap to Execute\n',
-                              style: TextStyle(fontSize: 12, color: Colors.black))
-                        ], style: TextStyle(color: Colors.black, fontSize: 18))),
-                        trailing: Text("+ \$220", style: TextStyle(fontSize: 20),),
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: (Text("Offering ends 18.01.2022", style: TextStyle
-                            (color: Colors.redAccent,
-                            fontSize: 14),)),
-                          ),
-                        ],
-                      ),
-
-
-    ],
-
-                      )
-                  ),
                           SizedBox(height: 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -371,7 +371,7 @@ class DtailActor extends StatelessWidget {
                                         horizontal: 12.0,
                                       ),
                                       child: Text(
-                                        "19,00€",
+                                        "20,00€",
                                         style: TextStyle(
                                           fontSize: 10,
                                           fontWeight: FontWeight.w900,
@@ -428,7 +428,7 @@ class DtailActor extends StatelessWidget {
                                         horizontal: 12.0,
                                       ),
                                       child: Text(
-                                        "21,00€",
+                                        "22,00€",
                                         style: TextStyle(
                                           fontSize: 10,
                                           fontWeight: FontWeight.w900,
@@ -524,12 +524,12 @@ class DtailActor extends StatelessWidget {
                             ],
                           ),
                           SizedBox(height: 15),
-                ]
+                        ]
 
-            ),
+                    ),
 
-            )
-  ])));
+                  )
+                ])));
   }
 }
 
@@ -628,4 +628,3 @@ void _settingModalBottomSheet(context) {
       }
   );
 }
-

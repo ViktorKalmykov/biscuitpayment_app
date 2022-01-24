@@ -12,6 +12,8 @@ import 'package:biscuitpayment_app/Pages/widgets/Trending.dart';
 import 'package:biscuitpayment_app/Pages/widgets/coin%20chart.dart';
 import 'package:biscuitpayment_app/Pages/widgets/data%20bars.dart';
 import 'package:biscuitpayment_app/Pages/widgets/detail_NFT.dart';
+import 'package:biscuitpayment_app/Pages/widgets/detail_fight.dart';
+import 'package:biscuitpayment_app/Pages/widgets/detail_jotaro.dart';
 import 'package:biscuitpayment_app/Pages/widgets/graph.dart';
 import 'package:biscuitpayment_app/screens/dashboard/components/graph%20chart/new%20chart.dart';
 import 'package:biscuitpayment_app/Pages/Chart%20for%20home%20page.dart';
@@ -237,6 +239,28 @@ class Shop extends StatelessWidget {
           price: 60,
           rating: 3),
     ];
+    final toohotactors = [
+      Actor(
+          asset: Config.assets.xmen,
+          title: "Anxiety",
+          price: 75.7,
+          rating: 4),
+      Actor(
+          asset: Config.assets.jotaro,
+          title: "Stand NFT",
+          price: 60,
+          rating: 3),
+      Actor(
+          asset: Config.assets.gang,
+          title: "Gang Dance NFT",
+          price: 60,
+          rating: 3),
+      Actor(
+          asset: Config.assets.ora,
+          title: "Ora NFT",
+          price: 60,
+          rating: 3),
+    ];
     final actors2 = [
       Actor(
           asset: Config.assets.pokemon,
@@ -271,6 +295,12 @@ class Shop extends StatelessWidget {
       Text("Rights of use"),
       Text("Crypto"),
       Text("Other assets"),
+    ];
+    final toohot = [
+      Order(asset: Config.assets.xmen, title: "Anxiety", qte: 5),
+      Order(asset: Config.assets.jotaro, title: "Stand", qte: 5),
+      Order(asset: Config.assets.gang, title: "Gang NFT", qte: 5),
+      Order(asset: Config.assets.ora, title: "Ora NFT", qte: 2),
     ];
     final hot = [
       Order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
@@ -367,13 +397,14 @@ class Shop extends StatelessWidget {
                       ),
                     ),
                   ),
+
                   SizedBox(
                     height: 135,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       padding: EdgeInsets.symmetric(vertical: 10),
                       itemBuilder: (context, i) {
-                        final order = hot[i];
+                        final order = toohot[i];
                         return Container(
                           margin: EdgeInsets.only(
                               left: i == 0 ? 20 : 0,
@@ -382,6 +413,51 @@ class Shop extends StatelessWidget {
                             order: order,
                           ),
                         );
+                      },
+                      itemCount: actors.length,
+                    ),
+                  ),
+                  SizedBox(height: 30),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
+                    child: Text(
+                      '2HOT NFT Collection',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  SizedBox(
+                    height: 330,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, i) {
+                        final actor = toohotactors[i];
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: i == 0 ? 20 : 0,
+                              right: i == actors.length - 1 ? 20 : 8),
+                          child: ActorComponent(
+                            actor: actor,
+                            onPressed: () {
+                              Config.navigate(
+                                  context,
+                                  Dtailfight(
+                                    actor: actor,
+                                  )
+                              );
+
+                            },
+
+
+                          ),
+
+
+
+                        );
+
                       },
                       itemCount: actors.length,
                     ),
@@ -691,21 +767,16 @@ class Shop extends StatelessWidget {
                                     actor: actor,
                                   )
                               );
-                              Padding(
-                                padding: const EdgeInsets.only(top: 4.0, left: 16),
-                                child: Text(
-                                  "+11%",
-                                  style: TextStyle(
-                                      color: Colors.green,
-                                      fontSize: 14
-                                  ),
-                                ));
+
                             },
+
 
                           ),
 
 
+
                         );
+
                       },
                       itemCount: actors.length,
                     ),

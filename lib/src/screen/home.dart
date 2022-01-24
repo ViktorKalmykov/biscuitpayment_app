@@ -248,10 +248,10 @@ class _HomeState extends State<Home> {
                     leading: Icon(
                       Icons.remove_circle_outline, color: Colors.pink,),
                     title: RichText(text: TextSpan(children: [
-                      TextSpan(text: 'Short Position'),
+                      TextSpan(text: 'Short Position\n'),
                       TextSpan(
                           text: 'Executed - Today 9AM\n', style: TextStyle(
-                          fontSize: 12, color: Colors.white70))
+                          fontSize: 12, color: Colors.grey))
                     ], style: TextStyle(color: Colors.black, fontSize: 18))),
                     trailing: Text("- \$430", style: TextStyle(fontSize: 20),),
                   ),
@@ -263,9 +263,9 @@ class _HomeState extends State<Home> {
                     leading: Icon(
                       Icons.add_circle_outline, color: Colors.pink,),
                     title: RichText(text: TextSpan(children: [
-                      TextSpan(text: 'Long Position'),
+                      TextSpan(text: 'Long Position\n'),
                       TextSpan(text: 'Executed - Today 12PM\n',
-                          style: TextStyle(fontSize: 12, color: Colors.white70))
+                          style: TextStyle(fontSize: 12, color: Colors.grey))
                     ], style: TextStyle(color: Colors.black, fontSize: 18))),
                     trailing: Text("+ \$220", style: TextStyle(fontSize: 20),),
                   ),
