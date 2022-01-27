@@ -213,6 +213,9 @@ class _Asset {
   final xmen = "assets/xmen.gif";
   final jotaro = "assets/jotaro.gif";
   final gang = "assets/gang.gif";
+  final vhs = "assets/vhs.gif";
+  final cyberpunk = "assets/cyberpunk.gif";
+  final jjoe = "assets/jjoe.gif";
 }
 
 class _Color {

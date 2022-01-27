@@ -82,6 +82,12 @@ final hot = [
   Order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
   Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
 ];
+final hot22 = [
+  Order(asset: Config.assets.vhs),
+  Order(asset: Config.assets.cyberpunk),
+  Order(asset: Config.assets.jjoe),
+  Order(asset: Config.assets.jjoe),
+];
 final hot2 = [
   Order(asset: Config.assets.pokemon, title: "Cryptomon", qte: 5),
   Order(asset: Config.assets.squid, title: "Squid NFT", qte: 2),
@@ -110,7 +116,7 @@ class Dtailfight extends StatelessWidget {
         .size
         .width;
     return Scaffold(appBar: AppBar(backgroundColor: Colors.pink,
-      title: Text("ASSET PAGE"),
+      title: Text("FIGHT"),
       centerTitle: true,
     ),
         drawer: NavigationDrawerWidget(),
@@ -118,37 +124,601 @@ class Dtailfight extends StatelessWidget {
             child: Stack(
                 children: <Widget>[
                   Container(
-                      height: 360,
+                      height: 300,
                       decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Colors.pink,
-                              Colors.blue,
-                            ],
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                          ),
+                          image: DecorationImage(image: AssetImage('assets/jjoe.gif'), fit: BoxFit.cover),
                           borderRadius: BorderRadius.only(
                             bottomRight: Radius.circular(60),
                             bottomLeft: Radius.circular(60),)
-                      ),
-                      child: SafeArea(
+                      ),),
+                      SafeArea(
                         child: ListView(
+                          children: <Widget>[
+
+                            SizedBox(height: 10),
+
+                        Row(mainAxisAlignment: MainAxisAlignment.center,
+
                             children: <Widget>[
 
-
-                              Image.asset('assets/muda.gif',
-                                  width: 30, height: 180),
-                              Image.asset('assets/ora.gif',
-                                  width: 30, height: 180),
+                              SizedBox(height: 25),
+                              Price(percentChange: 27),
+                              Image.asset('assets/muda.gif'),
+                              Price(percentChange: 14),
+                              Image.asset('assets/ora.gif'),
                             ]),
+
+                          SizedBox(height: 180),
+                          ListTile(
+                            onTap: () {
+                              _settingModalBottomSheet(context);
+                            },
+                            leading: Icon(
+                              Icons.equalizer, color: Colors.pink,),
+                            title: RichText(text: TextSpan(children: [
+                              TextSpan(text: 'MOST RECENT SPREAD'),
+
+                            ], style: TextStyle(color: Colors.black, fontSize: 18))),
+                            trailing: Text("\18.1%", style: TextStyle(fontSize: 20),),
+                          ),
+                          SizedBox(height: 5),
+                          SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                ClayContainer(
+                                  height: 140,
+                                  width: width * 0.27,
+                                  emboss: true,
+                                  borderRadius: 16,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                          left: 16.0,
+                                          right: 16,
+                                          top: 16,
+                                        ),
+
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 12.0,
+                                        ),
+
+                                      ),
+
+
+                                      Container(
+                                        margin: const EdgeInsets.only(
+                                          bottom: 16,
+                                          left: 16,
+                                          right: 16,
+                                        ),
+                                        height: 105,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(image: AssetImage('assets/jjoe.gif'), fit: BoxFit.cover),
+                                            borderRadius: BorderRadius.circular(10)
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                ClayContainer(
+                                  height: 140,
+                                  width: width * 0.27,
+                                  emboss: true,
+                                  borderRadius: 16,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                          left: 16.0,
+                                          right: 16,
+                                          top: 16,
+                                        ),
+
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 12.0,
+                                        ),
+
+                                      ),
+
+                                      Container(
+                                        margin: const EdgeInsets.only(
+                                          bottom: 16,
+                                          left: 16,
+                                          right: 16,
+                                        ),
+                                        height: 105,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(image: AssetImage('assets/vhs.gif'), fit: BoxFit.cover),
+                                            borderRadius: BorderRadius.circular(10)
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                ClayContainer(
+                                  height: 140,
+                                  width: width * 0.27,
+                                  emboss: true,
+                                  borderRadius: 16,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                          left: 16.0,
+                                          right: 16,
+                                          top: 16,
+                                        ),
+
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 12.0,
+                                        ),
+
+                                      ),
+
+                                      Container(
+                                        margin: const EdgeInsets.only(
+                                          bottom: 16,
+                                          left: 16,
+                                          right: 16,
+                                        ),
+                                        height: 105,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(image: AssetImage('assets/cyberpunk.gif'), fit: BoxFit.cover),
+                                            borderRadius: BorderRadius.circular(10)
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          SizedBox(height: 30),
+                          Container(height: 430,
+                              margin: const EdgeInsets.only(bottom: 10, left: 20, right: 20),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(30)),
+                                gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                    Colors.white70,
+                                    Colors.white,
+                                  ],
+
+                                ),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 16.0, left: 16),
+                                    child: Text(
+                                      "STATISTICS",
+                                      style: TextStyle
+                                        (color: Colors.black,
+                                          fontSize: 14),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 4.0, left: 16),
+                                    child: Text(
+                                      "Stand NFT",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 14
+                                      ),
+                                    ),
+
+                                  ),
+                                  Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 16.0,
+                                      ),
+                                      child: Text(
+                                          "20,00€",
+                                          style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w900,
+                                            color: Colors.black45,
+                                          ))),
+
+                                  Container(height: 100,
+                                    width: double.infinity,
+                                    margin: EdgeInsets.symmetric(horizontal: 15),
+                                    child: AssetPriceChart(lineColor: Colors.pink,),
+                                  ),
+                                  ChartFilter(),
+                                  Row(
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text("Recent trades"),
+                                      ),
+                                    ],
+                                  ),
+
+                                  ListTile(
+                                    onTap: () {
+                                      _settingModalBottomSheet(context);
+                                    },
+                                    leading: Icon(
+                                      Icons.remove_circle_outline, color: Colors.pink,),
+                                    title: RichText(text: TextSpan(children: [
+                                      TextSpan(text: 'Short Position\n'),
+                                      TextSpan(
+                                          text: 'Tap to Execute \n', style: TextStyle(
+                                          fontSize: 12, color: Colors.black))
+                                    ], style: TextStyle(color: Colors.black, fontSize: 18))),
+                                    trailing: Text("- \$630", style: TextStyle(fontSize: 20),),
+                                  ),
+
+                                  ListTile(
+                                    onTap: () {
+                                      _settingModalBottomSheet(context);
+                                    },
+                                    leading: Icon(
+                                      Icons.add_circle_outline, color: Colors.pink,),
+                                    title: RichText(text: TextSpan(children: [
+                                      TextSpan(text: 'Long Position\n'),
+                                      TextSpan(text: 'Tap to Execute\n',
+                                          style: TextStyle(fontSize: 12, color: Colors.black))
+                                    ], style: TextStyle(color: Colors.black, fontSize: 18))),
+                                    trailing: Text("+ \$820", style: TextStyle(fontSize: 20),),
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: (Text("Offering ends 29.01.2022", style: TextStyle
+                                          (color: Colors.redAccent,
+                                            fontSize: 14),)),
+                                      ),
+                                    ],
+                                  ),
+
+
+                                ],
+
+                              )
+                          ),
+                          SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              ClayContainer(
+                                height: 140,
+                                width: width * 0.27,
+                                emboss: true,
+                                borderRadius: 16,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 16.0,
+                                        right: 16,
+                                        top: 16,
+                                      ),
+                                      child: Text(
+                                        "Sold stats",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 12.0,
+                                      ),
+                                      child: Text(
+                                        "20,00€",
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.green,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(height: 50,
+                                      width: double.infinity,
+                                      margin: EdgeInsets.symmetric(horizontal: 15),
+                                      child: AssetPriceChart(lineColor: Colors.pink,),
+                                    ),
+                                    Spacer(),
+                                    Container(
+                                      margin: const EdgeInsets.only(
+                                        bottom: 16,
+                                        left: 16,
+                                        right: 16,
+                                      ),
+                                      height: 10,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Colors.black45,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              ClayContainer(
+                                height: 140,
+                                width: width * 0.27,
+                                emboss: true,
+                                borderRadius: 16,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 16.0,
+                                        right: 16,
+                                        top: 16,
+                                      ),
+                                      child: Text(
+                                        "Bidding stats",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 12.0,
+                                      ),
+                                      child: Text(
+                                        "22,00€",
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.green,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(height: 50,
+                                      width: double.infinity,
+                                      margin: EdgeInsets.symmetric(horizontal: 15),
+                                      child: AssetPriceChart(lineColor: Colors.blue,),
+                                    ),
+                                    Spacer(),
+                                    Container(
+                                      margin: const EdgeInsets.only(
+                                        bottom: 16,
+                                        left: 16,
+                                        right: 16,
+                                      ),
+                                      height: 10,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Colors.black45,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              ClayContainer(
+                                height: 140,
+                                width: width * 0.27,
+                                borderRadius: 16,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 16.0,
+                                        right: 16,
+                                        top: 16,
+                                      ),
+                                      child: Text(
+                                        "Unlock enhanced statistics",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 16.0,
+                                      ),
+                                      child: Text(
+                                        "By purchasing subscription",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black45,
+                                        ),
+                                      ),
+                                    ),
+                                    Spacer(),
+                                    Align(
+                                      alignment: Alignment.bottomRight,
+                                      child: Container(
+                                        margin: const EdgeInsets.only(bottom: 16, right: 16),
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              Color(0xFFFF559F),
+                                              Color(0xFFCF5CCF),
+                                              Color(0xFFFF57AC),
+                                              Color(0xFFFF6D91),
+                                              Color(0xFFFF8D7E),
+                                              Color(0xFFB6BAA6),
+                                            ],
+                                          ),
+                                        ),
+                                        child: Icon(
+                                          Icons.arrow_forward,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 15),
+                          ]
+
                       ),
 
+            ),
 
-                             ),
+
+
+
 
                 ])));
   }
 }
 
+void _settingModalBottomSheet(context) {
+  showModalBottomSheet(
+      context: context,
+      builder: (BuildContext bc) {
+        return Container(
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20), topLeft: Radius.circular(20))
+          ),
+          child: new Wrap(
+            children: <Widget>[
 
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center
+                , children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(Icons.compare_arrows, color: Colors.pink,),
+                ),
+              ],),
+              Container(
+                alignment: Alignment.center,
+                child: Text("Long Position", style: TextStyle(
+                    fontSize: 20, fontWeight: FontWeight.bold),),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: Text("Amount to execute"),
+              ),
+              SizedBox(height: 5,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: InkWell(
+                        onTap: () {
+                          if (money != 0) {
+                            money -= 10;
+                          }
+                        },
+                        child: CircleAvatar(
+                          child: Icon(Icons.remove, color: Colors.white,),
+                          radius: 20,
+                          backgroundColor: Colors.grey,)),
+                  ),
+                  SizedBox(width: 10,),
+                  Text("$money", style: TextStyle(
+                      fontSize: 38, fontWeight: FontWeight.bold),),
+                  SizedBox(width: 10,),
+                  Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: InkWell(
+                        onTap: () {
+
+                        },
+                        child: CircleAvatar(
+                          child: Icon(Icons.add, color: Colors.white,),
+                          radius: 20,
+                          backgroundColor: Colors.grey,)),
+                  ),
+
+                ],
+              ),
+              SizedBox(height: 10,),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Text("Execute", style: TextStyle(
+                            fontSize: 22, color: Colors.white),),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      }
+  );
+}
+
+Container courseWidget(String img, fit)
+{
+  return Container(
+    height: 100,
+    margin: EdgeInsets.only(right: 10),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        color: Colors.white70
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Container(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+          ),
+        ),
+        Container(
+          height: 90,
+          width: 70,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('Runner/assets/icons/$img.png'),
+                  fit: BoxFit.contain
+              )
+          ),
+        )
+      ],
+    ),
+  );
+}

@@ -15,6 +15,7 @@ import 'package:biscuitpayment_app/Pages/widgets/detail_NFT.dart';
 import 'package:biscuitpayment_app/Pages/widgets/detail_fight.dart';
 import 'package:biscuitpayment_app/Pages/widgets/detail_jotaro.dart';
 import 'package:biscuitpayment_app/Pages/widgets/graph.dart';
+import 'package:biscuitpayment_app/Pages/widgets/neew.dart';
 import 'package:biscuitpayment_app/screens/dashboard/components/graph%20chart/new%20chart.dart';
 import 'package:biscuitpayment_app/Pages/Chart%20for%20home%20page.dart';
 import 'package:clay_containers/widgets/clay_container.dart';
