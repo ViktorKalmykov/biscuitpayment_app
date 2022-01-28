@@ -541,7 +541,65 @@ class Shop extends StatelessWidget {
                   SizedBox(
                     height: 15,
                   ),
-                  Trending(),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Sorted by higher %',
+                            style: TextStyle(color: Colors.black45)),
+                        Row(children: [
+                          Text(
+                            '24H',
+                            style: TextStyle(color: Colors.black45),
+                          ),
+                          Icon(Icons.keyboard_arrow_down, color: Colors.black45),
+                        ])
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: SingleChildScrollView(
+                        physics: BouncingScrollPhysics(),
+                        child: Column(
+                          children: [
+                            _listCryptoItem(
+                              image:
+                              'assets/jotaro.gif',
+                              myCrypto: '3.529020 BTC',
+                              myBalance: '\$ 5.441',
+                              myProfit: '\$19.153',
+                              precent: 4.32,
+                            ),
+                            _listCryptoItem(
+                              image:
+                              'assets/ronnie.gif',
+                              myCrypto: '12.83789 ETH',
+                              myBalance: '\$ 401',
+                              myProfit: '\$4.822',
+                              precent: 3.97,
+                            ),
+                            _listCryptoItem(
+                              image:
+                              'assets/xmen.gif',
+                              myCrypto: '1911.6374736 XRP',
+                              myBalance: '\$ 0.45',
+                              myProfit: '\$859',
+                              precent: -13.55,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 20),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
@@ -1031,4 +1089,78 @@ class Shop extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _listCryptoItem(
+    {image,
+      double precent = 0,
+      myCrypto,
+      myBalance,
+      myProfit}) {
+  return Padding(
+    padding: const EdgeInsets.only(bottom: 20),
+    child: card(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Image.network(
+            '$image',
+            width: 50,
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  '$myCrypto',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
+                Text(
+                  '$myProfit',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black45,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                '$myBalance',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+              Text(
+                precent >= 0 ? '+ $precent %' : '$precent %',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: precent >= 0 ? Colors.green : Colors.pink,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+
+Widget card(
+    {double width = double.infinity, double padding = 20, child}) {
+  return Container(
+    width: width,
+    padding: EdgeInsets.all(padding),
+    decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(15))),
+    child: child,
+  );
 }
