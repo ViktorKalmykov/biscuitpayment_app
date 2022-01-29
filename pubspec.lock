@@ -126,7 +126,7 @@ packages:
       name: curved_navigation_bar
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "1.0.2"
   data_table_2:
     dependency: "direct main"
     description:

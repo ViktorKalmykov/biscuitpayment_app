@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:biscuitpayment_app/Pages/shop.dart';
+import 'package:biscuitpayment_app/Pages/widgets/order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:biscuitpayment_app/config.dart';
@@ -17,10 +18,10 @@ import 'package:biscuitpayment_app/widgets/bottom_navigation_bar.dart';
 import '../drawer.dart';
 
 final hot = [
-  Order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
-  Order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
-  Order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
-  Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+  order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
+  order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
+  order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
+  order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
 ];
 
 
@@ -63,4 +64,11 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+class order {
+  String? title;
+  int? qte;
+  String? asset;
+  order({this.asset, this.qte, this.title});
 }

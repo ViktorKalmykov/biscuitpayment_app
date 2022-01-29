@@ -3,6 +3,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biscuitpayment_app/Pages/widgets/NFT.dart';
 import 'package:biscuitpayment_app/models/order.dart';
+import 'package:biscuitpayment_app/widgets/actor_component.dart';
 import 'package:biscuitpayment_app/widgets/order_component.dart';
 import 'package:clay_containers/widgets/clay_container.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ import 'package:biscuitpayment_app/widgets/button.dart';
 import 'package:biscuitpayment_app/widgets/qte_widget.dart';
 
 import '../../drawer.dart';
+import '../detail_actor.dart';
 import '../favorite.dart';
 import '../home.dart';
 import 'NFT.dart';
@@ -69,7 +71,35 @@ final actors2 = [
       price: 60,
       rating: 3),
 ];
+final actors3 = [
+  Actor(
+      asset: Config.assets.pany,
+      title: "Pany booster",
+      price: 75.7,
+      rating: 4),
+  Actor(
+      asset: Config.assets.pirate,
+      title: "Pirate booster",
+      price: 60,
+      rating: 3),
+  Actor(
+      asset: Config.assets.babe,
+      title: "Babe booster",
+      price: 60,
+      rating: 3),
+  Actor(
+      asset: Config.assets.egld,
+      title: "EGLD booster",
+      price: 60,
+      rating: 3),
+];
 
+final sports = [
+  Order(asset: Config.assets.off, title: "Jordans", qte: 5),
+  Order(asset: Config.assets.ady, title: "Ady", qte: 2),
+  Order(asset: Config.assets.off, title: "Jordans", qte: 5),
+  Order(asset: Config.assets.ady, title: "Ady", qte: 2),
+];
 final orders = [
   Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
   Order(asset: Config.assets.doll, title: "Doll", qte: 2),
@@ -93,6 +123,18 @@ final hot3 = [
   Order(asset: Config.assets.obama, title: "Crypto politics", qte: 2),
   Order(asset: Config.assets.trump, title: "Crypto boss", qte: 5),
   Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+];
+final hotty = [
+  Order(asset: Config.assets.babe, title: "Gold booster", qte: 5),
+  Order(asset: Config.assets.pany, title: "Pany booster", qte: 2),
+  Order(asset: Config.assets.pirate, title: "Too hot booster", qte: 5),
+  Order(asset: Config.assets.egld, title: "Cyber booster", qte: 5),
+];
+final hotty2 = [
+  Order(asset: Config.assets.off, title: "Jordans", qte: 5),
+  Order(asset: Config.assets.ady, title: "Ady's", qte: 2),
+  Order(asset: Config.assets.pirate, title: "Too hot booster", qte: 5),
+  Order(asset: Config.assets.egld, title: "Cyber booster", qte: 5),
 ];
 double money = 50.00;
 int currentIndex = 0;
@@ -207,19 +249,36 @@ class DtailJotaro extends StatelessWidget {
                             ], style: TextStyle(color: Colors.black, fontSize: 14))),
                             trailing: Text("18%", style: TextStyle(fontSize: 14),),
                           ),
+                          SizedBox(height: 30),
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
+                            child: Text(
+                              'Available boosters',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
                           SizedBox(
-                            height: 135,
+                            height: 330,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
-                              padding: EdgeInsets.symmetric(vertical: 10),
                               itemBuilder: (context, i) {
-                                final order = hot[i];
+                                final actor = actors3[i];
                                 return Container(
                                   margin: EdgeInsets.only(
                                       left: i == 0 ? 20 : 0,
-                                      right: i == orders.length - 1 ? 20 : 15),
-                                  child: OrderComponent(
-                                    order: order,
+                                      right: i == actors.length - 1 ? 20 : 8),
+                                  child: ActorComponent(
+                                    actor: actor,
+                                    onPressed: () {
+                                      Config.navigate(
+                                          context,
+                                          DetailActor(
+                                            actor: actor,
+                                          ));
+                                    },
                                   ),
                                 );
                               },
@@ -627,4 +686,11 @@ void _settingModalBottomSheet(context) {
         );
       }
   );
+}
+
+class Order {
+  String? title;
+  int? qte;
+  String? asset;
+  Order({this.asset, this.qte, this.title});
 }

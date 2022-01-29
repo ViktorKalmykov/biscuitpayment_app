@@ -18,6 +18,8 @@ import 'package:biscuitpayment_app/widgets/actor_component.dart';
 import 'package:biscuitpayment_app/widgets/order_component.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'order.dart';
+
 
 const kPrimaryColor = Color(0xFFFFC61F);
 const ksecondaryColor = Color(0xFFB5BFD0);
@@ -173,10 +175,10 @@ class Home extends StatelessWidget {
           rating: 3),
     ];
     final orders = [
-      Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
-      Order(asset: Config.assets.doll, title: "Doll", qte: 2),
-      Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
-      Order(asset: Config.assets.doll, title: "Doll", qte: 2),
+      order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+      order(asset: Config.assets.doll, title: "Doll", qte: 2),
+      order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+      order(asset: Config.assets.doll, title: "Doll", qte: 2),
     ];
     final types = [
       Text("NFT assets"),

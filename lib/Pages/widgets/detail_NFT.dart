@@ -71,28 +71,28 @@ final actors2 = [
 ];
 
 final orders = [
-  Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
-  Order(asset: Config.assets.doll, title: "Doll", qte: 2),
-  Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
-  Order(asset: Config.assets.doll, title: "Doll", qte: 2),
+  order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+  order(asset: Config.assets.doll, title: "Doll", qte: 2),
+  order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+  order(asset: Config.assets.doll, title: "Doll", qte: 2),
 ];
 final hot = [
-  Order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
-  Order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
-  Order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
-  Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+  order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
+  order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
+  order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
+  order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
 ];
 final hot2 = [
-  Order(asset: Config.assets.pokemon, title: "Cryptomon", qte: 5),
-  Order(asset: Config.assets.squid, title: "Squid NFT", qte: 2),
-  Order(asset: Config.assets.pokemon2, title: "Cryptonyak", qte: 5),
-  Order(asset: Config.assets.kidkidd, title: "Red Ninja", qte: 5),
+  order(asset: Config.assets.pokemon, title: "Cryptomon", qte: 5),
+  order(asset: Config.assets.squid, title: "Squid NFT", qte: 2),
+  order(asset: Config.assets.pokemon2, title: "Cryptonyak", qte: 5),
+  order(asset: Config.assets.kidkidd, title: "Red Ninja", qte: 5),
 ];
 final hot3 = [
-  Order(asset: Config.assets.eminem, title: "Rap celeb", qte: 5),
-  Order(asset: Config.assets.obama, title: "Crypto politics", qte: 2),
-  Order(asset: Config.assets.trump, title: "Crypto boss", qte: 5),
-  Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+  order(asset: Config.assets.eminem, title: "Rap celeb", qte: 5),
+  order(asset: Config.assets.obama, title: "Crypto politics", qte: 2),
+  order(asset: Config.assets.trump, title: "Crypto boss", qte: 5),
+  order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
 ];
 double money = 50.00;
 int currentIndex = 0;
@@ -629,3 +629,9 @@ void _settingModalBottomSheet(context) {
   );
 }
 
+class order {
+  String? title;
+  int? qte;
+  String? asset;
+  order({this.asset, this.qte, this.title});
+}

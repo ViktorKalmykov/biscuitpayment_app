@@ -5,9 +5,11 @@ import 'package:bezier_chart/bezier_chart.dart';
 import 'package:biscuitpayment_app/Pages/charts.dart';
 import 'package:biscuitpayment_app/Pages/widgets/Asset%20stats.dart';
 import 'package:biscuitpayment_app/Pages/widgets/Final%20stat.dart';
+import 'package:biscuitpayment_app/Pages/widgets/Order.dart';
 import 'package:biscuitpayment_app/Pages/widgets/Price%20header.dart';
 import 'package:biscuitpayment_app/Pages/widgets/coin%20chart.dart';
 import 'package:biscuitpayment_app/Pages/widgets/data%20bars.dart';
+import 'package:biscuitpayment_app/Pages/widgets/detail_order.dart';
 import 'package:biscuitpayment_app/Pages/widgets/graph.dart';
 import 'package:biscuitpayment_app/screens/dashboard/components/graph%20chart/new%20chart.dart';
 import 'package:biscuitpayment_app/Pages/Chart%20for%20home%20page.dart';
@@ -22,7 +24,9 @@ import 'package:biscuitpayment_app/widgets/order_component.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../constants.dart';
+import 'package:biscuitpayment_app/models/order.dart';
 import '../responsive.dart';
+import 'package:biscuitpayment_app/Pages/widgets/order.dart';
 
 
 const kPrimaryColor = Color(0xFFFFC61F);
@@ -274,10 +278,10 @@ class Home extends StatelessWidget {
           rating: 3),
     ];
     final orders = [
-      Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
-      Order(asset: Config.assets.doll, title: "Doll", qte: 2),
-      Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
-      Order(asset: Config.assets.doll, title: "Doll", qte: 2),
+      order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+      order(asset: Config.assets.doll, title: "Doll", qte: 2),
+      order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+      order(asset: Config.assets.doll, title: "Doll", qte: 2),
     ];
     final types = [
       Text("NFT assets"),
@@ -287,10 +291,16 @@ class Home extends StatelessWidget {
       Text("Other assets"),
     ];
     final hot = [
-      Order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
-      Order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
-      Order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
-      Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+      order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
+      order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
+      order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
+      order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+    ];
+    final hotty2 = [
+      order(asset: Config.assets.off, title: "Jordans", qte: 5),
+      order(asset: Config.assets.ady, title: "Ady's", qte: 2),
+      order(asset: Config.assets.coat, title: "Coat", qte: 5),
+      order(asset: Config.assets.pany, title: "Pany booster", qte: 2),
     ];
 
     return Scaffold(
@@ -447,7 +457,36 @@ class Home extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 14),
-
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
+                    child: Text(
+                      'Customization & Boosters',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 135,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      itemBuilder: (context, i) {
+                        final order = hotty2[i];
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: i == 0 ? 20 : 0,
+                              right: i == orders.length - 1 ? 20 : 15),
+                          child: OrderComponent(
+                            order: order,
+                          ),
+                        );
+                      },
+                      itemCount: actors.length,
+                    ),
+                  ),
+                  SizedBox(height: 14),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20).copyWith(top: 10),
                     child: Text(
@@ -503,7 +542,7 @@ class Home extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       padding: EdgeInsets.symmetric(vertical: 10),
                       itemBuilder: (context, i) {
-                        final order = orders[i];
+                        final order = hot[i];
                         return Container(
                           margin: EdgeInsets.only(
                               left: i == 0 ? 20 : 0,
@@ -742,4 +781,9 @@ Container courseWidget(String name, Color color, Color textColor)
   );
 }
 
-
+class order {
+  String? title;
+  int? qte;
+  String? asset;
+  order({this.asset, this.qte, this.title});
+}

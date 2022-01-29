@@ -5,7 +5,7 @@ import 'package:biscuitpayment_app/models/order.dart';
 import 'package:biscuitpayment_app/pages/detail_actor.dart';
 import 'package:biscuitpayment_app/widgets/actor_component.dart';
 import 'package:biscuitpayment_app/widgets/order_component.dart';
-
+import 'package:biscuitpayment_app/Pages/widgets/order.dart';
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -25,8 +25,8 @@ class Home extends StatelessWidget {
           rating: 3),
     ];
     final orders = [
-      Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
-      Order(asset: Config.assets.doll, title: "Deer NFT", qte: 2),
+      order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+      order(asset: Config.assets.doll, title: "Deer NFT", qte: 2),
     ];
 
     return Scaffold(

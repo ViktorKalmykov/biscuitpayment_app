@@ -216,6 +216,13 @@ class _Asset {
   final vhs = "assets/vhs.gif";
   final cyberpunk = "assets/cyberpunk.gif";
   final jjoe = "assets/jjoe.gif";
+  final babe = "assets/babe.gif";
+  final pany = "assets/pany.gif";
+  final pirate = "assets/pirate.gif";
+  final egld = "assets/egld.gif";
+  final off = "assets/off.gif";
+  final ady = "assets/ady.gif";
+  final coat = "assets/coat.gif";
 }
 
 class _Color {

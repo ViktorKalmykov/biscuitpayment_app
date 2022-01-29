@@ -113,10 +113,10 @@ List matches1 = [
 ];
 
 final hot2 = [
-  Order(asset: Config.assets.pokemon, title: "Cryptomon", qte: 5),
-  Order(asset: Config.assets.squid, title: "Squid NFT", qte: 2),
-  Order(asset: Config.assets.pokemon2, title: "Cryptonyak", qte: 5),
-  Order(asset: Config.assets.kidkidd, title: "Red Ninja", qte: 5),
+  order(asset: Config.assets.pokemon, title: "Cryptomon", qte: 5),
+  order(asset: Config.assets.squid, title: "Squid NFT", qte: 2),
+  order(asset: Config.assets.pokemon2, title: "Cryptonyak", qte: 5),
+  order(asset: Config.assets.kidkidd, title: "Red Ninja", qte: 5),
 ];
 
 class Style {
@@ -285,10 +285,10 @@ class Shop extends StatelessWidget {
           rating: 3),
     ];
     final orders = [
-      Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
-      Order(asset: Config.assets.doll, title: "Doll", qte: 2),
-      Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
-      Order(asset: Config.assets.doll, title: "Doll", qte: 2),
+      order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+      order(asset: Config.assets.doll, title: "Doll", qte: 2),
+      order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+      order(asset: Config.assets.doll, title: "Doll", qte: 2),
     ];
     final types = [
       Text("NFT assets"),
@@ -298,34 +298,34 @@ class Shop extends StatelessWidget {
       Text("Other assets"),
     ];
     final toohot = [
-      Order(asset: Config.assets.xmen, title: "Anxiety", qte: 5),
-      Order(asset: Config.assets.jotaro, title: "Stand", qte: 5),
-      Order(asset: Config.assets.gang, title: "Gang NFT", qte: 5),
-      Order(asset: Config.assets.ora, title: "Ora NFT", qte: 2),
+      order(asset: Config.assets.xmen, title: "Anxiety", qte: 5),
+      order(asset: Config.assets.jotaro, title: "Stand", qte: 5),
+      order(asset: Config.assets.gang, title: "Gang NFT", qte: 5),
+      order(asset: Config.assets.ora, title: "Ora NFT", qte: 2),
     ];
     final hot = [
-      Order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
-      Order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
-      Order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
-      Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+      order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
+      order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
+      order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
+      order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
     ];
     final hot3 = [
-      Order(asset: Config.assets.eminem, title: "Rap celeb", qte: 5),
-      Order(asset: Config.assets.obama, title: "Crypto politics", qte: 2),
-      Order(asset: Config.assets.trump, title: "Crypto boss", qte: 5),
-      Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+      order(asset: Config.assets.eminem, title: "Rap celeb", qte: 5),
+      order(asset: Config.assets.obama, title: "Crypto politics", qte: 2),
+      order(asset: Config.assets.trump, title: "Crypto boss", qte: 5),
+      order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
     ];
     final hot4 = [
-      Order(asset: Config.assets.ronnie, title: "Crypto Ronnie", qte: 5),
-      Order(asset: Config.assets.ronaldo, title: "Crypto Goat", qte: 2),
-      Order(asset: Config.assets.mbappe, title: "Crypto Mbappe", qte: 5),
-      Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+      order(asset: Config.assets.ronnie, title: "Crypto Ronnie", qte: 5),
+      order(asset: Config.assets.ronaldo, title: "Crypto Goat", qte: 2),
+      order(asset: Config.assets.mbappe, title: "Crypto Mbappe", qte: 5),
+      order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
     ];
     final hot5 = [
-      Order(asset: Config.assets.boy, title: "Crypto Boy", qte: 5),
-      Order(asset: Config.assets.pizza, title: "Crypto Pizza", qte: 2),
-      Order(asset: Config.assets.art, title: "Crypto Art", qte: 5),
-      Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+      order(asset: Config.assets.boy, title: "Crypto Boy", qte: 5),
+      order(asset: Config.assets.pizza, title: "Crypto Pizza", qte: 2),
+      order(asset: Config.assets.art, title: "Crypto Art", qte: 5),
+      order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
     ];
     return Scaffold(
       body: Container(
@@ -445,7 +445,7 @@ class Shop extends StatelessWidget {
                             onPressed: () {
                               Config.navigate(
                                   context,
-                                  Dtailfight(
+                                  DtailJotaro(
                                     actor: actor,
                                   )
                               );
@@ -822,7 +822,7 @@ class Shop extends StatelessWidget {
                             onPressed: () {
                               Config.navigate(
                                   context,
-                                  DtailActor(
+                                  DtailJotaro(
                                     actor: actor,
                                   )
                               );
@@ -1163,4 +1163,11 @@ Widget card(
         borderRadius: BorderRadius.all(Radius.circular(15))),
     child: child,
   );
+}
+
+class order {
+  String? title;
+  int? qte;
+  String? asset;
+  order({this.asset, this.qte, this.title});
 }

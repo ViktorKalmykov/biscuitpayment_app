@@ -20,7 +20,7 @@ import 'package:biscuitpayment_app/pages/detail_actor.dart';
 import 'package:biscuitpayment_app/widgets/actor_component.dart';
 import 'package:biscuitpayment_app/widgets/order_component.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:biscuitpayment_app/Pages/widgets/order.dart';
 import '../constants.dart';
 import '../responsive.dart';
 
@@ -252,10 +252,10 @@ class FavoriteAvatars extends StatelessWidget {
           rating: 3),
     ];
     final orders = [
-      Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
-      Order(asset: Config.assets.doll, title: "Doll", qte: 2),
-      Order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
-      Order(asset: Config.assets.doll, title: "Doll", qte: 2),
+      order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+      order(asset: Config.assets.doll, title: "Doll", qte: 2),
+      order(asset: Config.assets.u2, title: "Collector outfit", qte: 5),
+      order(asset: Config.assets.doll, title: "Doll", qte: 2),
     ];
     final types = [
       Text("NFT assets"),
@@ -265,10 +265,10 @@ class FavoriteAvatars extends StatelessWidget {
       Text("Other assets"),
     ];
     final hot = [
-      Order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
-      Order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
-      Order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
-      Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+      order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
+      order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
+      order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
+      order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
     ];
 
     return Scaffold(

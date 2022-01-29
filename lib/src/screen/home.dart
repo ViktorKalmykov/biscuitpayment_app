@@ -24,10 +24,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 final hot = [
-  Order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
-  Order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
-  Order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
-  Order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
+  order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
+  order(asset: Config.assets.kidkid, title: "Crypto Humster", qte: 2),
+  order(asset: Config.assets.kidkidd, title: "Crypto Ninja", qte: 5),
+  order(asset: Config.assets.gdup, title: "Red Kitty", qte: 5),
 ];
 
 class Home extends StatefulWidget {

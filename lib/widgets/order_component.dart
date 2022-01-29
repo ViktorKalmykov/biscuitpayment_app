@@ -1,5 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:biscuitpayment_app/Pages/favorite.dart';
+import 'package:biscuitpayment_app/Pages/favorite.dart';
+import 'package:biscuitpayment_app/Pages/favorite.dart';
+import 'package:biscuitpayment_app/Pages/home.dart';
+import 'package:biscuitpayment_app/Pages/home.dart';
+import 'package:biscuitpayment_app/Pages/home_page.dart';
+import 'package:biscuitpayment_app/Pages/widgets/detail_NFT.dart';
+import 'package:biscuitpayment_app/Pages/widgets/order.dart';
+import 'package:biscuitpayment_app/Pages/widgets/order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:biscuitpayment_app/config.dart';
@@ -8,7 +17,7 @@ import 'package:biscuitpayment_app/models/order.dart';
 class OrderComponent extends StatelessWidget {
   const OrderComponent({Key? key, required this.order, this.onPressed})
       : super(key: key);
-  final Order order;
+  final order;
   final Function()? onPressed;
 
   @override

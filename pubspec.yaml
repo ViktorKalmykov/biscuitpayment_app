@@ -142,6 +142,13 @@ flutter:
     - assets/vhs.gif
     - assets/cyberpunk.gif
     - assets/jjoe.gif
+    - assets/babe.gif
+    - assets/pany.gif
+    - assets/pirate.gif
+    - assets/egld.gif
+    - assets/off.gif
+    - assets/ady.gif
+    - assets/coat.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
