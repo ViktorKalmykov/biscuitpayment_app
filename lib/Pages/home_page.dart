@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:biscuitpayment_app/Pages/shop.dart';
+import 'package:biscuitpayment_app/Pages/widgets/detail_fight.dart';
 import 'package:biscuitpayment_app/Pages/widgets/order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
@@ -16,6 +17,7 @@ import 'package:biscuitpayment_app/widgets/bottom_navigation_bar.dart';
 
 
 import '../drawer.dart';
+import 'on_boarding2.dart';
 
 final hot = [
   order(asset: Config.assets.gdup, title: "Red Alert", qte: 5),
@@ -49,9 +51,9 @@ class _HomePageState extends State<HomePage> {
           : page == 1
               ? Shop()
               : page == 2
-                  ? FavoriteAvatars()
+                  ? OnBoarding2()
                   : page == 3
-                      ? Setting()
+                      ? Dtailfight()
                       : Container(),
       bottomNavigationBar: SGBottomNavigationBar(
         items: [

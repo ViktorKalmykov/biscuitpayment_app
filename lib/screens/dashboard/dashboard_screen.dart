@@ -75,10 +75,61 @@ class DashboardScreen extends StatelessWidget {
                       StarageDetails2(),
                       MyFiles(),
                       SizedBox(height: defaultPadding),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Sorted by higher %',
+                                style: TextStyle(color: Colors.white70)),
+                            Row(children: [
+                              Text(
+                                '24H',
+                                style: TextStyle(color: Colors.white70),
+                              ),
+                              Icon(Icons.keyboard_arrow_down, color: Colors.white70),
+                            ])
+                          ],
+                        ),
+                      ),
                       LongME(),
                       SizedBox(height: defaultPadding),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Sorted by higher %',
+                                style: TextStyle(color: Colors.white70)),
+                            Row(children: [
+                              Text(
+                                '24H',
+                                style: TextStyle(color: Colors.white70),
+                              ),
+                              Icon(Icons.keyboard_arrow_down, color: Colors.white70),
+                            ])
+                          ],
+                        ),
+                      ),
                       ShortME(),
                       SizedBox(height: defaultPadding),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Sorted by higher %',
+                                style: TextStyle(color: Colors.white70)),
+                            Row(children: [
+                              Text(
+                                '24H',
+                                style: TextStyle(color: Colors.white70),
+                              ),
+                              Icon(Icons.keyboard_arrow_down, color: Colors.white70),
+                            ])
+                          ],
+                        ),
+                      ),
                       RecentFiles(),
                       if (Responsive.isMobile(context))
                         SizedBox(height: defaultPadding),

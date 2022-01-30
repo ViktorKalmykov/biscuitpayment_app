@@ -106,8 +106,7 @@ int currentIndex = 0;
 
 class Dtailfight extends StatelessWidget {
 
-  const Dtailfight({Key? key, required this.actor}) : super(key: key);
-  final Actor actor;
+  const Dtailfight({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -115,10 +114,7 @@ class Dtailfight extends StatelessWidget {
         .of(context)
         .size
         .width;
-    return Scaffold(appBar: AppBar(backgroundColor: Colors.pink,
-      title: Text("FIGHT"),
-      centerTitle: true,
-    ),
+    return Scaffold(
         drawer: NavigationDrawerWidget(),
         body: Container(
             child: Stack(
